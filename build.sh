@@ -1,0 +1,26 @@
+#!/bin/zsh
+# Builds Unmuffle.app into ./build
+# ./build.sh --universal builds for both Apple Silicon and Intel (used for releases).
+set -e
+cd "$(dirname "$0")"
+ARCHS=()
+[ "$1" = "--universal" ] && ARCHS=(--arch arm64 --arch x86_64)
+# Command Line Tools 27 ship a macOS 27 SDK whose SwiftUI needs a macro plugin that only
+# Xcode.app provides. Build against the macOS 26 SDK when it is present.
+SDK26="/Library/Developer/CommandLineTools/SDKs/MacOSX26.sdk"
+if [ -d "$SDK26" ]; then
+  swift build -c release $ARCHS --sdk "$SDK26"
+else
+  swift build -c release $ARCHS
+fi
+APP="build/Unmuffle.app"
+rm -rf "$APP"
+mkdir -p "$APP/Contents/MacOS" "$APP/Contents/Resources"
+cp .build/release/Unmuffle "$APP/Contents/MacOS/Unmuffle"
+cp Resources/Info.plist "$APP/Contents/Info.plist"
+cp Resources/AppIcon.icns "$APP/Contents/Resources/AppIcon.icns"
+# sharingd/AirDrop quarantine + ad-hoc sign makes Gatekeeper say the app is
+# damaged and offer to move it to Trash. Strip that before signing.
+xattr -cr "$APP" 2>/dev/null || true
+codesign --force --deep --sign - "$APP" >/dev/null 2>&1 || true
+echo "Built $PWD/$APP"

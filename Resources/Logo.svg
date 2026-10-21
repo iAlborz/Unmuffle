@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+<defs>
+<filter id="shadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="12" stdDeviation="14" flood-color="#000" flood-opacity="0.28"/></filter>
+<linearGradient id="sheen" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity="0.18"/><stop offset="0.5" stop-color="#fff" stop-opacity="0"/></linearGradient>
+<clipPath id="tile"><rect x="100" y="100" width="824" height="824" rx="185"/></clipPath>
+<filter id="glow" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="18"/></filter>
+<filter id="softglow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="10"/></filter>
+<linearGradient id="wave" x1="470" y1="0" x2="924" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#38BDF8"/><stop offset="1" stop-color="#34D399"/></linearGradient>
+<linearGradient id="dark" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#252E42"/><stop offset="1" stop-color="#0B0F19"/></linearGradient>
+<linearGradient id="beam" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset="0.5" stop-color="#fff" stop-opacity="0.95"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+<linearGradient id="tint" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#34D399" stop-opacity="0.14"/><stop offset="1" stop-color="#38BDF8" stop-opacity="0.04"/></linearGradient></defs>
+<g filter="url(#shadow)"><rect x="100" y="100" width="824" height="824" rx="185" fill="url(#dark)"/></g>
+<g clip-path="url(#tile)">
+<rect x="470" y="100" width="454" height="824" fill="url(#tint)"/><polyline points="60,580 79,417 96,598 117,467 139,555 160,466 178,588 203,461 223,605 249,423 270,635 288,399 308,564 326,446 351,567 374,418 394,599 412,467 431,610 452,445 470,512" fill="none" stroke="#7D879C" stroke-width="24" stroke-linejoin="round" stroke-linecap="round"/><path d="M470 512 Q517 172 564 512 T658 512 T752 512 T846 512 T940 512" fill="none" stroke="url(#wave)" stroke-width="56" stroke-linecap="round" filter="url(#glow)" opacity="0.65"/><path d="M470 512 Q517 172 564 512 T658 512 T752 512 T846 512 T940 512" fill="none" stroke="url(#wave)" stroke-width="36" stroke-linecap="round"/><rect x="458" y="100" width="24" height="824" fill="url(#beam)" filter="url(#softglow)"/><rect x="465" y="100" width="10" height="824" fill="url(#beam)"/>
+</g>
+<rect x="100" y="100" width="824" height="824" rx="185" fill="url(#sheen)"/>
+<rect x="100.5" y="100.5" width="823" height="823" rx="184.5" fill="none" stroke="#fff" stroke-opacity="0.12" stroke-width="2"/>
+</svg>

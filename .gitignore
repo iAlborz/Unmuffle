@@ -1,0 +1,12 @@
+# Build output
+.build/
+build/
+*.zip
+
+# Xcode / SwiftPM
+.swiftpm/
+xcuserdata/
+DerivedData/
+
+# macOS
+.DS_Store
