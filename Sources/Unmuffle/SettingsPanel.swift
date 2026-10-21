@@ -38,7 +38,7 @@ struct SettingsPanel: View {
         ],
         "Advanced Export Options": [
             ("Lossless trim", "Cuts the video at the nearest keyframes without re-encoding it. The picture is untouched but the cut may land a few frames off."),
-            ("Video encoder", "Used only when the timeline has cuts. Software gives the best picture at the same bitrate. Hardware uses the Mac's video chip and is much faster."),
+            ("Re-encoding", "Only happens when the timeline has cuts. The Mac's hardware video encoder re-encodes the picture with the same codec and bitrate as the source."),
         ],
     ]
 
@@ -184,19 +184,16 @@ struct SettingsPanel: View {
     private var hasTrim: Bool { m.trimStart > 0.001 || m.trimEnd < m.duration - 0.001 }
     private var hasCuts: Bool { !m.activeCuts.isEmpty }
     private var showLossless: Bool { hasTrim && !hasCuts }
-    private var showEncoder: Bool { hasCuts || (hasTrim && !m.losslessTrim) }
+    private var showReencode: Bool { hasCuts || (hasTrim && !m.losslessTrim) }
 
     @ViewBuilder
     private var outputSection: some View {
-        if showLossless || showEncoder {
+        if showLossless || showReencode {
             card("Advanced Export Options", isOn: nil) {
                 if showLossless {
                     Toggle("Lossless trim (cut at keyframes, may be off by a few frames)", isOn: $m.losslessTrim)
                 }
-                if showEncoder {
-                    Picker("Video encoder", selection: $m.videoEncoder) {
-                        ForEach(VideoEncoder.allCases) { Text($0.rawValue).tag($0) }
-                    }
+                if showReencode {
                     Text("Cuts change the timeline, so the video is re-encoded with the same codec and bitrate as the source.")
                         .font(.caption).foregroundStyle(.secondary)
                         .fixedSize(horizontal: false, vertical: true)

@@ -22,5 +22,6 @@ cp Resources/AppIcon.icns "$APP/Contents/Resources/AppIcon.icns"
 # sharingd/AirDrop quarantine + ad-hoc sign makes Gatekeeper say the app is
 # damaged and offer to move it to Trash. Strip that before signing.
 xattr -cr "$APP" 2>/dev/null || true
-codesign --force --deep --sign - "$APP" >/dev/null 2>&1 || true
+scripts/embed-ffmpeg.sh "$APP"
+codesign --force --sign - --entitlements Resources/Unmuffle.entitlements "$APP"
 echo "Built $PWD/$APP"

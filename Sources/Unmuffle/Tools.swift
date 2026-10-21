@@ -17,7 +17,8 @@ enum ToolError: LocalizedError {
 enum Tools {
     static func find(_ name: String) -> String? {
         var candidates: [String] = []
-        if let r = Bundle.main.resourceURL { candidates.append(r.appendingPathComponent(name).path) }
+        // The copy built into the app (Contents/MacOS), then Homebrew and PATH for `swift run`.
+        if let b = Bundle.main.url(forAuxiliaryExecutable: name) { candidates.append(b.path) }
         candidates += ["/opt/homebrew/bin/\(name)", "/usr/local/bin/\(name)", "/opt/local/bin/\(name)"]
         if let p = ProcessInfo.processInfo.environment["PATH"] {
             for d in p.split(separator: ":") { candidates.append("\(d)/\(name)") }

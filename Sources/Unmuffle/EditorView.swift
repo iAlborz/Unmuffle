@@ -144,7 +144,7 @@ struct ExportButton: View {
             if m.isBusy {
                 ProgressView(value: m.progress >= 0 ? m.progress : nil)
             }
-            Text("Saves a copy next to the original as name-1, name-2, …")
+            Text("Saves a copy. Suggests name-1 next to the original.")
                 .font(.caption).foregroundStyle(.secondary)
         }
     }

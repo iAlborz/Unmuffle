@@ -11,12 +11,6 @@ struct SilenceSegment: Identifiable, Equatable {
     var remove: Bool
 }
 
-enum VideoEncoder: String, CaseIterable, Identifiable {
-    case software = "Software (best quality)"
-    case hardware = "Hardware (fast)"
-    var id: String { rawValue }
-}
-
 @MainActor
 final class ProjectModel: ObservableObject {
     @Published var url: URL?
@@ -64,7 +58,6 @@ final class ProjectModel: ObservableObject {
         if andPlay && !isPlaying { play() }
     }
 
-    @Published var videoEncoder: VideoEncoder = .software
     @Published var losslessTrim = false
 
     @Published var isBusy = false
@@ -495,17 +488,12 @@ final class ProjectModel: ObservableObject {
 
     // MARK: Rendering
 
+    /// Re-encodes with Apple's hardware encoder at the source bitrate. The bundled ffmpeg is
+    /// LGPL-only, so the GPL software encoders (x264, x265) are not available.
     private var finalVideoArgs: [String] {
         let hevc = info.videoCodec == "hevc"
         let br = info.videoBitrate > 0 ? info.videoBitrate : 8_000_000
-        var a: [String]
-        switch videoEncoder {
-        case .software:
-            a = ["-c:v", hevc ? "libx265" : "libx264", "-preset", "medium",
-                 "-b:v", "\(br)", "-maxrate", "\(Int(Double(br) * 1.5))", "-bufsize", "\(br * 2)"]
-        case .hardware:
-            a = ["-c:v", hevc ? "hevc_videotoolbox" : "h264_videotoolbox", "-b:v", "\(br)", "-allow_sw", "1"]
-        }
+        var a = ["-c:v", hevc ? "hevc_videotoolbox" : "h264_videotoolbox", "-b:v", "\(br)", "-allow_sw", "1"]
         if info.pixFmt == "yuv420p" { a += ["-pix_fmt", "yuv420p"] }
         if hevc { a += ["-tag:v", "hvc1"] }
         return a
@@ -573,7 +561,14 @@ final class ProjectModel: ObservableObject {
     func export() async {
         guard let u = url, !isBusy else { return }
         guard !keepSegments().isEmpty else { errorMessage = "Nothing is left to save. Check the trim range."; return }
-        let out = Self.nextOutputURL(for: u)
+        // Ask where to save, suggesting name-1 next to the original. The sandbox only allows
+        // writing where the user chooses.
+        let suggested = Self.nextOutputURL(for: u)
+        let panel = NSSavePanel()
+        panel.directoryURL = suggested.deletingLastPathComponent()
+        panel.nameFieldStringValue = suggested.lastPathComponent
+        if let type = UTType(filenameExtension: u.pathExtension) { panel.allowedContentTypes = [type] }
+        guard panel.runModal() == .OK, let out = panel.url else { return }
         let args = buildArgs(input: u, output: out)
         let copied = videoWillBeCopied
         pause()

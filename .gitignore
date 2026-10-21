@@ -10,3 +10,6 @@ DerivedData/
 
 # macOS
 .DS_Store
+
+# Bundled ffmpeg, built by scripts/build-ffmpeg.sh
+vendor/
