@@ -23,6 +23,8 @@ setting() { grep -m1 -E "[[:space:]]$1 = " Unmuffle.xcodeproj/project.pbxproj | 
 plutil -replace CFBundleShortVersionString -string "$(setting MARKETING_VERSION)" "$APP/Contents/Info.plist"
 plutil -replace CFBundleVersion -string "$(setting CURRENT_PROJECT_VERSION)" "$APP/Contents/Info.plist"
 cp Resources/AppIcon.icns "$APP/Contents/Resources/AppIcon.icns"
+# Translations: compile the string catalog into <language>.lproj folders, as Xcode does.
+xcrun xcstringstool compile Resources/Localizable.xcstrings --output-directory "$APP/Contents/Resources"
 # sharingd/AirDrop quarantine + ad-hoc sign makes Gatekeeper say the app is
 # damaged and offer to move it to Trash. Strip that before signing.
 xattr -cr "$APP" 2>/dev/null || true

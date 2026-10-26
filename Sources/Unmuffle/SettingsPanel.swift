@@ -10,35 +10,35 @@ struct SettingsPanel: View {
     /// Plain-language help for every card, shown from the ⓘ button.
     private static let help: [String: [(String, String)]] = [
         "Normalize Volume": [
-            ("Auto", "Levels the whole recording to -16 LUFS, the loudness standard for podcasts and online video. Quiet passages come up, loud ones come down."),
-            ("Manual", "Shows the Volume slider. Raises or lowers the whole recording by a fixed amount in decibels. +6 dB is about twice as loud."),
-            ("Mute", "Replaces the sound with silence. The video is untouched."),
+            (String(localized: "Auto"), String(localized: "Levels the whole recording to -16 LUFS, the loudness standard for podcasts and online video. Quiet passages come up, loud ones come down.")),
+            (String(localized: "Manual"), String(localized: "Shows the Volume slider. Raises or lowers the whole recording by a fixed amount in decibels. +6 dB is about twice as loud.")),
+            (String(localized: "Mute"), String(localized: "Replaces the sound with silence. The video is untouched.")),
         ],
         "Denoise": [
-            ("Auto", "Measures the background noise in the quiet parts of the timeline and removes that much. Re-measures when the quiet parts change."),
-            ("Manual", "Lets you set the values yourself. Detect Noise fills them in from the measurement as a starting point."),
-            ("Amount", "How many decibels of noise to remove. Higher is cleaner but can make the voice sound thin or watery."),
-            ("Noise floor", "The level below which sound is treated as noise. Set it a little above the measured floor."),
+            (String(localized: "Auto"), String(localized: "Measures the background noise in the quiet parts of the timeline and removes that much. Re-measures when the quiet parts change.")),
+            (String(localized: "Manual"), String(localized: "Lets you set the values yourself. Detect Noise fills them in from the measurement as a starting point.")),
+            (String(localized: "Amount"), String(localized: "How many decibels of noise to remove. Higher is cleaner but can make the voice sound thin or watery.")),
+            (String(localized: "Noise floor"), String(localized: "The level below which sound is treated as noise. Set it a little above the measured floor.")),
         ],
         "Equalizer": [
-            ("Preset", "Starting shapes for the curve. Voice Clarity lifts 2–5 kHz where consonants live. Warm adds body around 150–400 Hz. Podcast is a general spoken-word curve. Shows Manual once you move a point."),
-            ("Graph", "Eight bands from 60 Hz to 12 kHz. Drag a point up to boost or down to cut that band, ±12 dB. Double-click a point to reset it."),
-            ("Orange tabs", "The left tab is the rumble cut: everything below it is removed (desk thumps, air conditioning). 80–100 Hz is safe for voice. The right tab is the hiss cut: everything above it is removed. Keep it above 8 kHz or speech loses crispness. Drag a tab to the edge to turn that cut off. The shaded areas show what is cropped."),
+            (String(localized: "Preset"), String(localized: "Starting shapes for the curve. Voice Clarity lifts 2–5 kHz where consonants live. Warm adds body around 150–400 Hz. Podcast is a general spoken-word curve. Shows Manual once you move a point.")),
+            (String(localized: "Graph"), String(localized: "Eight bands from 60 Hz to 12 kHz. Drag a point up to boost or down to cut that band, ±12 dB. Double-click a point to reset it.")),
+            (String(localized: "Orange tabs"), String(localized: "The left tab is the rumble cut: everything below it is removed (desk thumps, air conditioning). 80–100 Hz is safe for voice. The right tab is the hiss cut: everything above it is removed. Keep it above 8 kHz or speech loses crispness. Drag a tab to the edge to turn that cut off. The shaded areas show what is cropped.")),
         ],
         "Even Out Loud Parts": [
-            ("What it does", "Listens for moments that are much louder than the rest, such as a laugh or a raised voice, and quiets them down. Normal speech is left alone."),
-            ("Threshold", "The loudness where it starts to act. Anything above this level is reduced. Lower values catch more of the recording."),
-            ("Ratio", "How strongly loud parts are reduced. 2:1 is gentle, 4:1 is firm, 10:1 flattens almost every peak."),
+            (String(localized: "What it does"), String(localized: "Listens for moments that are much louder than the rest, such as a laugh or a raised voice, and quiets them down. Normal speech is left alone.")),
+            (String(localized: "Threshold"), String(localized: "The loudness where it starts to act. Anything above this level is reduced. Lower values catch more of the recording.")),
+            (String(localized: "Ratio"), String(localized: "How strongly loud parts are reduced. 2:1 is gentle, 4:1 is firm, 10:1 flattens almost every peak.")),
         ],
         "Trim Quiet Parts": [
-            ("Quiet below", "Anything under this level counts as quiet. Raise it to catch more pauses, lower it to keep soft speech."),
-            ("Min length", "A pause has to be at least this long to be removed. Short gaps between words are kept. A small margin is always left on both sides of a cut so words are not clipped."),
-            ("Red blocks", "Each red block on the timeline is a cut. Click one to keep it. All and None toggle every block."),
-            ("Noise gate", "Different from the cuts: it keeps the timeline as it is but mutes the audio in the short gaps between words when the level falls under the gate threshold. Good against constant hiss. Set too high, it clips the start of words."),
+            (String(localized: "Quiet below"), String(localized: "Anything under this level counts as quiet. Raise it to catch more pauses, lower it to keep soft speech.")),
+            (String(localized: "Min length"), String(localized: "A pause has to be at least this long to be removed. Short gaps between words are kept. A small margin is always left on both sides of a cut so words are not clipped.")),
+            (String(localized: "Red blocks"), String(localized: "Each red block on the timeline is a cut. Click one to keep it. All and None toggle every block.")),
+            (String(localized: "Noise gate"), String(localized: "Different from the cuts: it keeps the timeline as it is but mutes the audio in the short gaps between words when the level falls under the gate threshold. Good against constant hiss. Set too high, it clips the start of words.")),
         ],
         "Advanced Export Options": [
-            ("Lossless trim", "Cuts the video at the nearest keyframes without re-encoding it. The picture is untouched but the cut may land a few frames off."),
-            ("Re-encoding", "Only happens when the timeline has cuts. The Mac's hardware video encoder re-encodes the picture with the same codec and bitrate as the source."),
+            (String(localized: "Lossless trim"), String(localized: "Cuts the video at the nearest keyframes without re-encoding it. The picture is untouched but the cut may land a few frames off.")),
+            (String(localized: "Re-encoding"), String(localized: "Only happens when the timeline has cuts. The Mac's hardware video encoder re-encodes the picture with the same codec and bitrate as the source.")),
         ],
     ]
 
@@ -128,7 +128,7 @@ struct SettingsPanel: View {
                             m.settings.eqGains = p.gains
                         }
                     })) {
-                    ForEach(AudioSettings.eqPresets, id: \.name) { Text($0.name).tag($0.name) }
+                    ForEach(AudioSettings.eqPresets, id: \.name) { Text(LocalizedStringKey($0.name)).tag($0.name) }
                     if m.settings.eqPresetName == "Manual" { Text("Manual").tag("Manual") }
                 }
                 .labelsHidden()
@@ -140,9 +140,12 @@ struct SettingsPanel: View {
     }
 
     private var cutSummary: String {
-        let lo = m.settings.highpass > 0 ? "Rumble cut below \(Int(m.settings.highpass)) Hz" : "No rumble cut"
-        let hi = m.settings.lowpass > 0 ? "hiss cut above \(String(format: "%.1f", m.settings.lowpass / 1000)) kHz" : "no hiss cut"
-        return "\(lo) · \(hi). Drag the orange tabs to change."
+        let lo = m.settings.highpass > 0
+            ? String(localized: "Rumble cut below \(Int(m.settings.highpass)) Hz") : String(localized: "No rumble cut")
+        let hi = m.settings.lowpass > 0
+            ? String(localized: "hiss cut above \(String(format: "%.1f", m.settings.lowpass / 1000)) kHz")
+            : String(localized: "no hiss cut")
+        return String(localized: "\(lo) · \(hi). Drag the orange tabs to change.")
     }
 
     // MARK: Compressor
@@ -217,7 +220,7 @@ struct SettingsPanel: View {
                         .foregroundStyle(.secondary)
                         .rotationEffect(.degrees(expanded ? 90 : 0))
                         .frame(width: 12)
-                    Text(title).font(.headline)
+                    Text(LocalizedStringKey(title)).font(.headline)
                     Button {
                         // A click outside the popover dismisses it first; if that click was on the
                         // button itself, treat it as "close", not "reopen".
@@ -235,7 +238,7 @@ struct SettingsPanel: View {
                                                   set: { if !$0 { infoShown = nil; infoDismissedAt = Date() } }),
                              arrowEdge: .leading) {
                         VStack(alignment: .leading, spacing: 10) {
-                            Text(title).font(.headline)
+                            Text(LocalizedStringKey(title)).font(.headline)
                             ForEach(Self.help[title] ?? [], id: \.0) { item in
                                 VStack(alignment: .leading, spacing: 2) {
                                     Text(item.0).font(.subheadline.weight(.semibold))
@@ -274,7 +277,7 @@ struct SettingsPanel: View {
         )
     }
 
-    private func slider(_ label: String, value: Binding<Double>, in range: ClosedRange<Double>,
+    private func slider(_ label: LocalizedStringKey, value: Binding<Double>, in range: ClosedRange<Double>,
                         unit: String, digits: Int, offLabel: String? = nil, step: Double? = nil) -> some View {
         HStack(spacing: 8) {
             Text(label).frame(width: 110, alignment: .leading).font(.callout)

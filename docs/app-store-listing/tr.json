@@ -1,0 +1,21 @@
+{
+  "subtitle": "Videolardaki sesi temizleyin",
+  "promo": "Bir videoyu bırakın, temizlenmiş sesi hemen dinleyin ve dışa aktarın. Ücretsiz, açık kaynak ve gizliliğe saygılı: her şey Mac'inizde gerçekleşir.",
+  "keywords": "gürültü,ses,video,podcast,temizleme,konuşma,mikrofon,kayıt,arka plan,netlik,parazit,iyileştir,vlog",
+  "description": "Unmuffle, videolarınızdaki konuşma sesini temizler. Bir ekran kaydını, vlog'u, röportajı ya da görüntülü görüşmeyi bırakın; görüntüye dokunmadan arka plan gürültüsünü kaldırır, ses düzeyini dengeler ve konuşmayı netleştirir.\n\nVARSAYILAN OLARAK BASİT\n• Üç seçenek: sesi iyileştirin, konuşmayı güçlendirin ya da ona podcast tonu verin ve arka plan gürültüsünü kaldırın.\n• Videoyu bıraktığınız anda temizlenmiş sesle oynatılır; sonucu hemen duyarsınız.\n• Dışa Aktar'a basın, bir kopya kaydedilir. Orijinal asla değişmez.\n\nİSTEDİĞİNİZDE HER AYAR\n• Kaydınızdaki gürültüyü ölçüp kendini ayarlayan gürültü azaltma.\n• Gürültü kapısı, uğultu ve tıslama filtreleri ve sürükleyerek ayarlanan 8 bantlı ekolayzır.\n• Kompresör ve −16 LUFS podcast standardına göre ses yüksekliği normalleştirme.\n• Başı ve sonu kırpın, uzun duraklamaları otomatik olarak kesin.\n• Karşılaştırmak için oynatırken Orijinal ile İşlenmiş arasında geçiş yapın.\n\nGÖRÜNTÜ OLDUĞU GİBİ KALIR\nBir şey kesmediğiniz sürece video akışı bayt bayt kopyalanır. Kestiğinizde Mac'in donanım kodlayıcısı videoyu orijinal bit hızında yeniden kodlar.\n\nGİZLİ VE AÇIK KAYNAK\nHer şey Mac'inizde gerçekleşir. Unmuffle hiçbir ağ bağlantısı kurmaz ve veri toplamaz. Kaynak kodu MIT lisansıyla GitHub'da.",
+  "screens": {
+    "simple": {
+      "h1": "Her videodaki sesi temizleyin.",
+      "sub": "Arka plan gürültüsünü kaldırır, ses düzeyini dengeler ve konuşmayı netleştirir. Görüntüye dokunulmaz."
+    },
+    "adv": {
+      "h1": "İstediğinizde her ayar elinizde.",
+      "sub": "Gürültü azaltma, ekolayzır, kompresör, ses yüksekliği, kırpma ve sessiz bölümleri kesme; hepsi canlı önizlemeyle."
+    },
+    "drop": {
+      "h1": "Videoyu bırakın. Dışa aktarın. Bitti.",
+      "sub": "Ücretsiz ve açık kaynak. Videolarınız Mac'inizden hiç çıkmaz."
+    }
+  },
+  "sampleFile": "Podcast Bölüm 12"
+}

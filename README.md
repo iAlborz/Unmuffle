@@ -4,11 +4,15 @@
 
 <p align="center">A small, free macOS app that cleans up the voice in a video without touching the picture.</p>
 
-<p align="center"><img src="docs/screenshots/simple.png" width="800" alt="Unmuffle in Simple mode"></p>
+<p align="center"><img src="docs/screenshots/en/simple.png" width="800" alt="Unmuffle in Simple mode"></p>
 
 Drop in a screen recording, a vlog or a video call. Unmuffle removes the background noise, evens out
 the volume and makes the voice clearer. Then it saves a copy, and the original stays as it was. The
 video stream is copied byte for byte unless you cut something.
+
+Unmuffle is available in English, Spanish, French, German, Italian, Portuguese (Brazil), Dutch, Polish,
+Russian, Turkish, Japanese, Korean, and Chinese (Simplified and Traditional). It follows your Mac's
+language.
 
 ## Download
 

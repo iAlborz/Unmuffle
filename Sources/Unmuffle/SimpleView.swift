@@ -31,9 +31,9 @@ struct SimpleView: View {
                                                           set: { m.simpleChoices.noise = $0; m.applySimpleChoices() }),
                                        description: m.simpleChoices.noise.description)
                         }
-                        Text(m.simpleChoices.audio == .mute
-                             ? "The exported video will have no sound."
-                             : "The player plays the result. Export when it sounds right.")
+                        (m.simpleChoices.audio == .mute
+                             ? Text("The exported video will have no sound.")
+                             : Text("The player plays the result. Export when it sounds right."))
                             .font(.caption).foregroundStyle(.secondary)
                             .fixedSize(horizontal: false, vertical: true)
                         ExportButton()
@@ -50,7 +50,7 @@ struct SimpleView: View {
     }
 
     private func choiceCard<T: CaseIterable & Identifiable & RawRepresentable & Hashable>(
-        _ title: String, icon: String, selection: Binding<T>, description: String
+        _ title: LocalizedStringKey, icon: String, selection: Binding<T>, description: String
     ) -> some View where T.RawValue == String, T.AllCases: RandomAccessCollection {
         GroupBox {
             VStack(alignment: .leading, spacing: 6) {
@@ -84,7 +84,7 @@ struct BigSegmented<T: CaseIterable & Identifiable & RawRepresentable & Hashable
             ForEach(Array(T.allCases)) { option in
                 let selected = option == selection
                 Button { withAnimation(.easeInOut(duration: 0.12)) { selection = option } } label: {
-                    Text(option.rawValue)
+                    Text(LocalizedStringKey(option.rawValue))
                         .font(.system(size: 11, weight: selected ? .semibold : .regular))
                         .lineLimit(2)
                         .multilineTextAlignment(.center)

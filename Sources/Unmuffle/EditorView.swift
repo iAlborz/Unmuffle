@@ -31,7 +31,7 @@ func mediaSummary(_ i: MediaInfo) -> String {
         var s = "\(i.videoCodec.uppercased()) \(i.width)×\(i.height)"
         if i.fps > 0 { s += " \(String(format: "%.3g", i.fps)) fps" }
         if i.videoBitrate > 0 { s += " · \(i.videoBitrate / 1000) kb/s" }
-        s += " · audio \(i.audioCodec.uppercased())"
+        s += " · \(String(localized: "audio")) \(i.audioCodec.uppercased())"
         if i.audioBitrate > 0 { s += " \(i.audioBitrate / 1000) kb/s" }
         s += " · \(timeString(i.duration))"
         return s
@@ -133,7 +133,7 @@ struct ExportButton: View {
     var body: some View {
         VStack(spacing: 6) {
             Button { Task { await m.export() } } label: {
-                Label(m.isBusy ? m.busyLabel : "Export", systemImage: "square.and.arrow.down")
+                Label(m.isBusy ? m.busyLabel : String(localized: "Export"), systemImage: "square.and.arrow.down")
                     .font(.body.weight(.semibold))
                     .frame(maxWidth: .infinity)
                     .padding(.vertical, 2)

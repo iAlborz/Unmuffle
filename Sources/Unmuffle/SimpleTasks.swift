@@ -6,9 +6,9 @@ enum SimpleAudio: String, CaseIterable, Identifiable {
     var id: String { rawValue }
     var description: String {
         switch self {
-        case .normal: return "Volume and dynamics are left as recorded."
-        case .enhance: return "Evens out loud moments and brings the whole recording to a standard loudness."
-        case .mute: return "Replaces the sound with silence. The video is kept exactly as it is."
+        case .normal: return String(localized: "Volume and dynamics are left as recorded.")
+        case .enhance: return String(localized: "Evens out loud moments and brings the whole recording to a standard loudness.")
+        case .mute: return String(localized: "Replaces the sound with silence. The video is kept exactly as it is.")
         }
     }
 }
@@ -18,9 +18,9 @@ enum SimpleVoice: String, CaseIterable, Identifiable {
     var id: String { rawValue }
     var description: String {
         switch self {
-        case .normal: return "No tone changes."
-        case .boost: return "Lifts the range where speech is clearest and removes low rumble, so the voice cuts through."
-        case .podcast: return "A fuller spoken-word tone: warmer body, crisp consonants, tighter level control."
+        case .normal: return String(localized: "No tone changes.")
+        case .boost: return String(localized: "Lifts the range where speech is clearest and removes low rumble, so the voice cuts through.")
+        case .podcast: return String(localized: "A fuller spoken-word tone: warmer body, crisp consonants, tighter level control.")
         }
     }
 }
@@ -30,9 +30,9 @@ enum SimpleNoise: String, CaseIterable, Identifiable {
     var id: String { rawValue }
     var description: String {
         switch self {
-        case .off: return "Background noise is left alone."
-        case .remove: return "Takes out hiss, hum, and room noise based on the quiet parts of the recording."
-        case .aggressive: return "Removes much more noise and mutes the gaps between words. Can make the voice sound thinner."
+        case .off: return String(localized: "Background noise is left alone.")
+        case .remove: return String(localized: "Takes out hiss, hum, and room noise based on the quiet parts of the recording.")
+        case .aggressive: return String(localized: "Removes much more noise and mutes the gaps between words. Can make the voice sound thinner.")
         }
     }
 }

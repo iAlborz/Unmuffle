@@ -1,0 +1,53 @@
+<!doctype html>
+<!-- One 2560×1600 App Store screenshot. Open as compose.html#<lang>/<screen>; data.js holds the texts,
+     window snapshots and video rectangles (written by scripts/screenshots/make.sh). -->
+<html><head><meta charset="utf-8">
+<style>
+  html, body { margin: 0; width: 2560px; height: 1600px; overflow: hidden; }
+  body {
+    background:
+      radial-gradient(1200px 700px at 78% 105%, rgba(52, 211, 153, 0.22), transparent 70%),
+      radial-gradient(1100px 650px at 15% 0%, rgba(56, 189, 248, 0.20), transparent 70%),
+      linear-gradient(160deg, #1B2340 0%, #0B0F19 100%);
+    font-family: -apple-system, "SF Pro Display", system-ui, sans-serif;
+    color: #fff; display: flex; flex-direction: column; align-items: center;
+  }
+  h1 { font-size: 92px; font-weight: 700; letter-spacing: -1.5px; margin: 96px 0 0; white-space: nowrap; }
+  p { font-size: 40px; color: rgba(255,255,255,0.68); margin: 22px 0 0; max-width: 1900px; text-align: center; line-height: 1.35; }
+  .win { position: relative; margin-top: 70px; border-radius: var(--r); overflow: hidden;
+    box-shadow: 0 50px 140px rgba(0,0,0,0.65), 0 0 0 2px rgba(255,255,255,0.10); }
+  .win img.shot { display: block; width: 100%; height: 100%; }
+  .win img.frame { position: absolute; object-fit: cover; }
+</style>
+<script src="data.js"></script>
+</head>
+<body>
+<h1 id="h"></h1>
+<p id="s"></p>
+<div class="win" id="win"><img class="shot" id="shot"><img class="frame" id="frame" src="frame.png"></div>
+<script>
+(() => {  // in a function: names like "top" and "screen" are taken by the browser
+const [lang, screen] = location.hash.slice(1).split("/");
+const s = DATA[lang][screen];
+document.documentElement.lang = lang;
+const h = document.getElementById("h");
+h.textContent = s.h1;
+document.getElementById("s").textContent = s.sub;
+// Shrink long headlines so they stay on one line.
+let size = 92;
+while (h.scrollWidth > 2300 && size > 56) { size -= 2; h.style.fontSize = size + "px"; }
+// Fit the window into the space below the text.
+const top = document.getElementById("s").getBoundingClientRect().bottom + 70;
+const scale = Math.min(2200 / s.w, (1600 - top - 90) / s.h);
+const win = document.getElementById("win");
+win.style.width = s.w * scale + "px"; win.style.height = s.h * scale + "px";
+win.style.setProperty("--r", 20 * scale + "px");
+document.getElementById("shot").src = s.img;
+const f = document.getElementById("frame");
+if (s.video) {
+  const [x, y, w, hh] = s.video.map(v => v * scale);
+  Object.assign(f.style, { left: x + "px", top: y + "px", width: w + "px", height: hh + "px", borderRadius: 16 * scale + "px" });
+} else f.remove();
+})();
+</script>
+</body></html>

@@ -169,7 +169,7 @@ final class ProjectModel: ObservableObject {
         guard toolsAvailable else { errorMessage = ToolError.ffmpegMissing.errorDescription; return }
         guard !isBusy else { return }
         reset()
-        isBusy = true; busyLabel = "Reading video…"; progress = -1
+        isBusy = true; busyLabel = String(localized: "Reading video…"); progress = -1
         do {
             let i = try await MediaInfo.probe(newURL)
             guard i.hasAudio else { throw ToolError.noAudio }
@@ -180,7 +180,7 @@ final class ProjectModel: ObservableObject {
             player.replaceCurrentItem(with: AVPlayerItem(url: newURL))
             player.isMuted = showingProcessed
             player.volume = volume
-            busyLabel = "Analyzing audio…"
+            busyLabel = String(localized: "Analyzing audio…")
             try await analyzeAudio()
         } catch {
             errorMessage = error.localizedDescription
@@ -572,11 +572,11 @@ final class ProjectModel: ObservableObject {
         let args = buildArgs(input: u, output: out)
         let copied = videoWillBeCopied
         pause()
-        await runFFmpeg(args: args, label: "Saving \(out.lastPathComponent)…", totalDuration: outputDuration) { [self] in
+        await runFFmpeg(args: args, label: String(localized: "Saving \(out.lastPathComponent)…"), totalDuration: outputDuration) { [self] in
             lastOutput = out
             statusMessage = copied
-                ? "Saved \(out.lastPathComponent). Video stream copied unchanged."
-                : "Saved \(out.lastPathComponent). Video re-encoded at the source bitrate because of cuts."
+                ? String(localized: "Saved \(out.lastPathComponent). Video stream copied unchanged.")
+                : String(localized: "Saved \(out.lastPathComponent). Video re-encoded at the source bitrate because of cuts.")
         }
     }
 
@@ -594,7 +594,7 @@ final class ProjectModel: ObservableObject {
                 }
             })
             if job.wasCancelled {
-                statusMessage = "Cancelled."
+                statusMessage = String(localized: "Cancelled.")
                 if let outPath = args.last { try? FileManager.default.removeItem(atPath: outPath) }
             } else if r.status == 0 {
                 onSuccess()

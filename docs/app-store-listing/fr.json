@@ -1,0 +1,21 @@
+{
+  "subtitle": "Nettoyez la voix de vos vidéos",
+  "promo": "Déposez une vidéo, écoutez aussitôt la voix nettoyée, puis exportez. Gratuit, open source et privé : tout se passe sur votre Mac.",
+  "keywords": "bruit,fond,supprimer,réduire,débruiteur,audio,son,micro,podcast,améliorer,volume,parole,interview",
+  "description": "Unmuffle nettoie la voix de vos vidéos. Déposez un enregistrement d'écran, un vlog, une interview ou un appel vidéo : il supprime le bruit de fond, égalise le volume et rend la parole plus claire, sans toucher à l'image.\n\nSIMPLE PAR DÉFAUT\n• Trois choix : améliorer l'audio, renforcer la voix ou lui donner un ton podcast, et supprimer le bruit de fond.\n• La vidéo est lue avec le nettoyage appliqué dès que vous la déposez : vous entendez tout de suite le résultat.\n• Cliquez sur Exporter et une copie est enregistrée. L'original n'est jamais modifié.\n\nTOUS LES RÉGLAGES QUAND VOUS LE VOULEZ\n• Une réduction du bruit qui mesure le bruit de votre enregistrement et se règle toute seule.\n• Noise gate, coupure des graves et des aigus, et un égaliseur 8 bandes que vous réglez en faisant glisser les points.\n• Compresseur et normalisation du volume à −16 LUFS, la norme des podcasts.\n• Coupez le début et la fin, et retirez automatiquement les longues pauses.\n• Passez d'Original à Traité pendant la lecture pour comparer.\n\nL'IMAGE RESTE TELLE QUELLE\nSauf si vous coupez quelque chose, le flux vidéo est copié octet par octet. Si vous coupez, l'encodeur matériel du Mac le réencode au débit d'origine.\n\nPRIVÉ ET OPEN SOURCE\nTout se passe sur votre Mac. Unmuffle n'établit aucune connexion réseau et ne collecte aucune donnée. Le code source est sur GitHub sous licence MIT.",
+  "screens": {
+    "simple": {
+      "h1": "Une voix nette dans chaque vidéo.",
+      "sub": "Supprime le bruit de fond, égalise le volume et rend la parole plus claire. L'image reste intacte."
+    },
+    "adv": {
+      "h1": "Tous les réglages, quand vous voulez.",
+      "sub": "Réduction du bruit, égaliseur, compresseur, volume, découpe et suppression des silences, avec aperçu en direct."
+    },
+    "drop": {
+      "h1": "Déposez une vidéo. Exportez. Terminé.",
+      "sub": "Gratuit et open source. Vos vidéos ne quittent jamais votre Mac."
+    }
+  },
+  "sampleFile": "Épisode 12 du podcast"
+}

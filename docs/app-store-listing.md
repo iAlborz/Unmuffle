@@ -1,6 +1,8 @@
 # Mac App Store listing
 
-The text used in App Store Connect, kept here so later versions start from it.
+The English text used in App Store Connect, kept here so later versions start from it. The other 13
+languages, and the screenshot headlines, are in `app-store-listing/<language>.json`. Screenshots are made
+by `scripts/screenshots/make.sh` into `screenshots/<language>/`.
 
 **Name:** Unmuffle
 
@@ -43,9 +45,7 @@ noise,denoise,remove,audio,voice,video,podcast,enhance,clean,background,loudness
 
 ## Description
 
-Unmuffle cleans up the voice in your videos. Drop in a screen recording, a vlog, an interview or a
-video call, and it removes background noise, evens out the volume and makes speech clearer, without
-touching the picture.
+Unmuffle cleans up the voice in your videos. Drop in a screen recording, a vlog, an interview or a video call, and it removes background noise, evens out the volume and makes speech clearer, without touching the picture.
 
 SIMPLE BY DEFAULT
 • Three choices: enhance the audio, boost the voice or give it a podcast tone, and remove background noise.
@@ -60,9 +60,7 @@ EVERY CONTROL WHEN YOU WANT IT
 • Switch between Original and Processed while it plays to compare.
 
 THE PICTURE STAYS AS IT WAS
-Unless you cut something, the video stream is copied byte for byte. When you do cut, the Mac's
-hardware encoder re-encodes it at the original bitrate.
+Unless you cut something, the video stream is copied byte for byte. When you do cut, the Mac's hardware encoder re-encodes it at the original bitrate.
 
 PRIVATE AND OPEN SOURCE
-Everything happens on your Mac. Unmuffle makes no network connections and collects no data. The
-source code is on GitHub under the MIT license.
+Everything happens on your Mac. Unmuffle makes no network connections and collects no data. The source code is on GitHub under the MIT license.
