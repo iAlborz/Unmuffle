@@ -1,21 +1,33 @@
 <!doctype html>
-<!-- One 2560×1600 App Store screenshot. Open as compose.html#<lang>/<screen>; data.js holds the texts,
-     window snapshots and video rectangles (written by scripts/screenshots/make.sh). -->
+<!-- One 2560×1600 App Store screenshot: the app window on a MacBook Pro, on a bright background.
+     Open as compose.html#<lang>/<screen>; data.js holds the texts, window snapshots and video rectangles
+     (written by scripts/screenshots/make.sh). macbook.png is Apple's MacBook Pro 14-inch bezel (see make.sh);
+     podcast.jpg is shown in the player. -->
 <html><head><meta charset="utf-8">
 <style>
   html, body { margin: 0; width: 2560px; height: 1600px; overflow: hidden; }
   body {
     background:
-      radial-gradient(1200px 700px at 78% 105%, rgba(52, 211, 153, 0.22), transparent 70%),
-      radial-gradient(1100px 650px at 15% 0%, rgba(56, 189, 248, 0.20), transparent 70%),
-      linear-gradient(160deg, #1B2340 0%, #0B0F19 100%);
+      radial-gradient(1100px 600px at 12% 0%, rgba(56, 189, 248, 0.16), transparent 70%),
+      radial-gradient(1100px 600px at 90% 100%, rgba(52, 211, 153, 0.16), transparent 70%),
+      linear-gradient(180deg, #FBFDFF 0%, #EEF4FA 100%);
     font-family: -apple-system, "SF Pro Display", system-ui, sans-serif;
-    color: #fff; display: flex; flex-direction: column; align-items: center;
+    color: #0F172A; display: flex; flex-direction: column; align-items: center;
   }
-  h1 { font-size: 92px; font-weight: 700; letter-spacing: -1.5px; margin: 96px 0 0; white-space: nowrap; }
-  p { font-size: 40px; color: rgba(255,255,255,0.68); margin: 22px 0 0; max-width: 1900px; text-align: center; line-height: 1.35; }
-  .win { position: relative; margin-top: 70px; border-radius: var(--r); overflow: hidden;
-    box-shadow: 0 50px 140px rgba(0,0,0,0.65), 0 0 0 2px rgba(255,255,255,0.10); }
+  h1 { font-size: 88px; font-weight: 700; letter-spacing: -1.5px; margin: 84px 0 0; white-space: nowrap; }
+  p { font-size: 38px; color: #475569; margin: 20px 0 0; max-width: 1900px; text-align: center; line-height: 1.35; }
+
+  .mac { position: relative; margin-top: 0; }  /* the bezel image has room above the lid */
+  .mac img.bezel { position: absolute; inset: 0; width: 100%; height: 100%;
+    filter: drop-shadow(0 30px 50px rgba(15, 23, 42, 0.18)); }
+  .screen { position: absolute; overflow: hidden;
+    background:
+      radial-gradient(55% 75% at 12% 18%, #9ED6FF 0%, transparent 62%),
+      radial-gradient(55% 70% at 88% 26%, #B6EFD9 0%, transparent 62%),
+      radial-gradient(70% 70% at 50% 108%, #D8CCFF 0%, transparent 66%),
+      linear-gradient(135deg, #E6F2FF 0%, #F1FBF6 100%); }
+  .win { position: absolute; overflow: hidden;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.35), 0 24px 60px rgba(15, 23, 42, 0.45); }
   .win img.shot { display: block; width: 100%; height: 100%; }
   .win img.frame { position: absolute; object-fit: cover; }
 </style>
@@ -24,29 +36,42 @@
 <body>
 <h1 id="h"></h1>
 <p id="s"></p>
-<div class="win" id="win"><img class="shot" id="shot"><img class="frame" id="frame" src="frame.png"></div>
+<div class="mac" id="mac">
+  <div class="screen" id="screen">
+    <div class="win" id="win"><img class="shot" id="shot"><img class="frame" id="frame" src="podcast.jpg"></div>
+  </div>
+  <img class="bezel" src="macbook.png">
+</div>
 <script>
 (() => {  // in a function: names like "top" and "screen" are taken by the browser
 const [lang, screen] = location.hash.slice(1).split("/");
 const s = DATA[lang][screen];
 document.documentElement.lang = lang;
-const h = document.getElementById("h");
-h.textContent = s.h1;
-document.getElementById("s").textContent = s.sub;
+const $ = id => document.getElementById(id);
+const px = (el, props) => { for (const k in props) el.style[k] = props[k] + "px"; };
+$("h").textContent = s.h1;
+$("s").textContent = s.sub;
 // Shrink long headlines so they stay on one line.
-let size = 92;
-while (h.scrollWidth > 2300 && size > 56) { size -= 2; h.style.fontSize = size + "px"; }
-// Fit the window into the space below the text.
-const top = document.getElementById("s").getBoundingClientRect().bottom + 70;
-const scale = Math.min(2200 / s.w, (1600 - top - 90) / s.h);
-const win = document.getElementById("win");
-win.style.width = s.w * scale + "px"; win.style.height = s.h * scale + "px";
-win.style.setProperty("--r", 20 * scale + "px");
-document.getElementById("shot").src = s.img;
-const f = document.getElementById("frame");
+let size = 88;
+while ($("h").scrollWidth > 2300 && size > 56) { size -= 2; $("h").style.fontSize = size + "px"; }
+
+// The bezel image and its transparent screen (the 14-inch MacBook Pro's 3024×1964 display), in image pixels.
+const BEZEL = [3860, 2540], SCREEN = [418, 288, 3024, 1964];
+const top = $("s").getBoundingClientRect().bottom;
+const k = Math.min(2400 / BEZEL[0], (1600 - top - 20) / BEZEL[1]);
+px($("mac"), { width: BEZEL[0] * k, height: BEZEL[1] * k });
+const [sx, sy, sw, sh] = SCREEN.map(v => v * k);
+px($("screen"), { left: sx, top: sy, width: sw, height: sh });
+
+// The app window, as large as fits on the screen, a little below center (clear of the notch).
+const scale = Math.min(sw * 0.86 / s.w, sh * 0.8 / s.h);
+const ww = s.w * scale, wh = s.h * scale;
+px($("win"), { left: (sw - ww) / 2, top: (sh - wh) / 2 + sh * 0.03, width: ww, height: wh, borderRadius: 24 * scale });
+$("shot").src = s.img;
+const f = $("frame");
 if (s.video) {
-  const [x, y, w, hh] = s.video.map(v => v * scale);
-  Object.assign(f.style, { left: x + "px", top: y + "px", width: w + "px", height: hh + "px", borderRadius: 16 * scale + "px" });
+  const [x, y, w, h] = s.video.map(v => v * scale);
+  px(f, { left: x, top: y, width: w, height: h, borderRadius: 16 * scale });
 } else f.remove();
 })();
 </script>

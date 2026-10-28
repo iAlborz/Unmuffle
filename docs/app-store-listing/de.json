@@ -2,8 +2,12 @@
   "subtitle": "Stimmen in Videos verbessern",
   "promo": "Video hineinziehen, die bereinigte Stimme sofort hören und exportieren. Kostenlos, Open Source und privat: Alles passiert auf deinem Mac.",
   "keywords": "entrauschen,rauschen,rauschunterdrückung,störgeräusche,audio,ton,sprache,podcast,mikrofon,lautstärke",
-  "description": "Unmuffle bereinigt die Stimme in deinen Videos. Zieh eine Bildschirmaufnahme, einen Vlog, ein Interview oder einen Videoanruf hinein – Unmuffle entfernt Hintergrundgeräusche, gleicht die Lautstärke aus und macht Sprache verständlicher, ohne das Bild anzutasten.\n\nEINFACH VON ANFANG AN\n• Drei Optionen: Audio verbessern, die Stimme verstärken oder ihr einen Podcast-Klang geben und Hintergrundgeräusche entfernen.\n• Sobald du das Video hineinziehst, läuft es mit der Bereinigung – du hörst das Ergebnis also sofort.\n• Klicke auf „Exportieren“ und eine Kopie wird gesichert. Das Original bleibt immer unverändert.\n\nJEDE EINSTELLUNG, WENN DU SIE BRAUCHST\n• Rauschunterdrückung, die das Rauschen in deiner Aufnahme misst und sich selbst einstellt.\n• Noise Gate, Rumpel- und Höhenfilter sowie ein 8-Band-Equalizer, den du mit der Maus ziehst.\n• Kompressor und Lautheitsnormalisierung auf den Podcast-Standard von −16 LUFS.\n• Anfang und Ende kürzen und lange Pausen automatisch herausschneiden.\n• Beim Abspielen zwischen „Original“ und „Bearbeitet“ wechseln, um zu vergleichen.\n\nDAS BILD BLEIBT, WIE ES WAR\nSolange du nichts schneidest, wird der Videostream Byte für Byte kopiert. Wenn du schneidest, codiert der Hardware-Encoder des Mac ihn mit der ursprünglichen Bitrate neu.\n\nPRIVAT UND OPEN SOURCE\nAlles passiert auf deinem Mac. Unmuffle baut keine Netzwerkverbindungen auf und sammelt keine Daten. Der Quellcode steht auf GitHub unter der MIT-Lizenz.",
+  "description": "Unmuffle bereinigt die Stimme in deinen Videos. Zieh eine Bildschirmaufnahme, einen Vlog, ein Interview oder einen Videoanruf hinein – Unmuffle entfernt Hintergrundgeräusche, gleicht die Lautstärke aus und macht Sprache verständlicher, ohne das Bild anzutasten.\n\nSOFORT-MODUS\n• Zieh ein Video oder einen ganzen Stapel hinein. Jedes wird sofort bereinigt und als Kopie neben dem Original gesichert. Ganz ohne Klicken.\n• Die Optionen für Audio, Stimme und Hintergrundgeräusche liegen seitlich und gelten für jedes Video.\n\nEINFACH VON ANFANG AN\n• Drei Optionen: Audio verbessern, die Stimme verstärken oder ihr einen Podcast-Klang geben und Hintergrundgeräusche entfernen.\n• Sobald du das Video hineinziehst, läuft es mit der Bereinigung – du hörst das Ergebnis also sofort.\n• Klicke auf „Exportieren“ und eine Kopie wird gesichert. Das Original bleibt immer unverändert.\n\nJEDE EINSTELLUNG, WENN DU SIE BRAUCHST\n• Rauschunterdrückung, die das Rauschen in deiner Aufnahme misst und sich selbst einstellt.\n• Noise Gate, Rumpel- und Höhenfilter sowie ein 8-Band-Equalizer, den du mit der Maus ziehst.\n• Kompressor und Lautheitsnormalisierung auf den Podcast-Standard von −16 LUFS.\n• Anfang und Ende kürzen und lange Pausen automatisch herausschneiden.\n• Beim Abspielen zwischen „Original“ und „Bearbeitet“ wechseln, um zu vergleichen.\n\nDAS BILD BLEIBT, WIE ES WAR\nSolange du nichts schneidest, wird der Videostream Byte für Byte kopiert. Wenn du schneidest, codiert der Hardware-Encoder des Mac ihn mit der ursprünglichen Bitrate neu.\n\nPRIVAT UND OPEN SOURCE\nAlles passiert auf deinem Mac. Unmuffle baut keine Netzwerkverbindungen auf und sammelt keine Daten. Der Quellcode steht auf GitHub unter der MIT-Lizenz.",
   "screens": {
+    "instant": {
+      "h1": "Einfach reinziehen. Unmuffle macht den Rest.",
+      "sub": "Der Sofort-Modus bereinigt jedes Video und sichert es neben dem Original. Ganz ohne Klicken."
+    },
     "simple": {
       "h1": "Klare Stimme in jedem Video.",
       "sub": "Entfernt Hintergrundgeräusche, gleicht die Lautstärke aus und macht Sprache verständlicher. Das Bild bleibt unberührt."
@@ -17,5 +21,11 @@
       "sub": "Kostenlos und Open Source. Deine Videos verlassen nie deinen Mac."
     }
   },
-  "sampleFile": "Podcast Folge 12"
+  "sampleFile": "Podcast Folge 12",
+  "instantFiles": [
+    "Team-Call",
+    "Interview",
+    "Vlog Tag 3"
+  ],
+  "whatsNew": "• Neuer Sofort-Modus: Videos hineinziehen, und jedes wird bereinigt und neben dem Original gesichert, ganz ohne Klicken.\n• Unmuffle gibt es jetzt in 14 Sprachen.\n• Verständlichere Fehlermeldungen."
 }

@@ -2,8 +2,12 @@
   "subtitle": "Czysty głos w każdym wideo",
   "promo": "Przeciągnij wideo, od razu usłysz oczyszczony głos i wyeksportuj. Za darmo, open source i prywatnie: wszystko dzieje się na twoim Macu.",
   "keywords": "szum,szumy,odszumianie,redukcja,dźwięk,audio,mowa,podcast,mikrofon,głośność,nagranie,tło,film,vlog",
-  "description": "Unmuffle oczyszcza głos w twoich nagraniach wideo. Przeciągnij nagranie ekranu, vloga, wywiad lub rozmowę wideo, a Unmuffle usunie szum tła, wyrówna głośność i sprawi, że mowa będzie wyraźniejsza – bez ingerencji w obraz.\n\nDOMYŚLNIE PROSTO\n• Trzy wybory: popraw dźwięk, wzmocnij głos lub nadaj mu brzmienie podcastu oraz usuń szum tła.\n• Po przeciągnięciu wideo od razu odtwarza się z poprawkami, więc natychmiast słyszysz efekt.\n• Kliknij „Eksportuj”, a zostanie zapisana kopia. Oryginał nigdy się nie zmienia.\n\nPEŁNA KONTROLA, GDY JEJ POTRZEBUJESZ\n• Redukcja szumu, która mierzy szum w nagraniu i sama się ustawia.\n• Bramka szumów, filtry dudnienia i syku oraz 8-pasmowy korektor sterowany przeciąganiem.\n• Kompresor i normalizacja głośności do standardu podcastów −16 LUFS.\n• Przycinanie początku i końca oraz automatyczne wycinanie długich pauz.\n• Przełączanie między „Oryginał” i „Po obróbce” w trakcie odtwarzania, aby porównać.\n\nOBRAZ ZOSTAJE TAKI, JAKI BYŁ\nDopóki niczego nie wytniesz, strumień wideo jest kopiowany bajt po bajcie. Gdy coś wytniesz, sprzętowy koder Maca koduje go ponownie z oryginalną przepływnością.\n\nPRYWATNIE I OPEN SOURCE\nWszystko dzieje się na twoim Macu. Unmuffle nie nawiązuje połączeń sieciowych i nie zbiera żadnych danych. Kod źródłowy jest dostępny na GitHubie na licencji MIT.",
+  "description": "Unmuffle oczyszcza głos w twoich nagraniach wideo. Przeciągnij nagranie ekranu, vloga, wywiad lub rozmowę wideo, a Unmuffle usunie szum tła, wyrówna głośność i sprawi, że mowa będzie wyraźniejsza – bez ingerencji w obraz.\n\nTRYB SZYBKI\n• Upuść jedno wideo albo całą partię. Każde jest od razu oczyszczane i zapisywane jako kopia obok oryginału. Bez klikania.\n• Opcje dźwięku, głosu i szumu tła są z boku i obowiązują dla każdego upuszczonego wideo.\n\nDOMYŚLNIE PROSTO\n• Trzy wybory: popraw dźwięk, wzmocnij głos lub nadaj mu brzmienie podcastu oraz usuń szum tła.\n• Po przeciągnięciu wideo od razu odtwarza się z poprawkami, więc natychmiast słyszysz efekt.\n• Kliknij „Eksportuj”, a zostanie zapisana kopia. Oryginał nigdy się nie zmienia.\n\nPEŁNA KONTROLA, GDY JEJ POTRZEBUJESZ\n• Redukcja szumu, która mierzy szum w nagraniu i sama się ustawia.\n• Bramka szumów, filtry dudnienia i syku oraz 8-pasmowy korektor sterowany przeciąganiem.\n• Kompresor i normalizacja głośności do standardu podcastów −16 LUFS.\n• Przycinanie początku i końca oraz automatyczne wycinanie długich pauz.\n• Przełączanie między „Oryginał” i „Po obróbce” w trakcie odtwarzania, aby porównać.\n\nOBRAZ ZOSTAJE TAKI, JAKI BYŁ\nDopóki niczego nie wytniesz, strumień wideo jest kopiowany bajt po bajcie. Gdy coś wytniesz, sprzętowy koder Maca koduje go ponownie z oryginalną przepływnością.\n\nPRYWATNIE I OPEN SOURCE\nWszystko dzieje się na twoim Macu. Unmuffle nie nawiązuje połączeń sieciowych i nie zbiera żadnych danych. Kod źródłowy jest dostępny na GitHubie na licencji MIT.",
   "screens": {
+    "instant": {
+      "h1": "Po prostu upuść. Unmuffle zrobi resztę.",
+      "sub": "Tryb szybki oczyszcza każde upuszczone wideo i zapisuje je obok oryginału. Bez klikania."
+    },
     "simple": {
       "h1": "Czysty głos w każdym wideo.",
       "sub": "Usuwa szum tła, wyrównuje głośność i sprawia, że mowa jest wyraźniejsza. Obraz pozostaje nietknięty."
@@ -17,5 +21,11 @@
       "sub": "Za darmo i open source. Twoje nagrania nigdy nie opuszczają Maca."
     }
   },
-  "sampleFile": "Podcast odcinek 12"
+  "sampleFile": "Podcast odcinek 12",
+  "instantFiles": [
+    "Spotkanie zespołu",
+    "Wywiad",
+    "Vlog dzień 3"
+  ],
+  "whatsNew": "• Nowy tryb szybki: upuść wideo, a każde zostanie oczyszczone i zapisane obok oryginału, bez klikania.\n• Unmuffle jest teraz dostępny w 14 językach.\n• Czytelniejsze komunikaty o błędach."
 }

@@ -4616,7 +4616,7 @@
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Natychmiast"
+            "value" : "Szybki"
           }
         },
         "ru" : {
@@ -4634,7 +4634,7 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "インスタント"
+            "value" : "即時"
           }
         },
         "ko" : {
@@ -4699,7 +4699,7 @@
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Tryb natychmiastowy zapisuje obok oryginału. Zezwolić aplikacji Unmuffle na zapis w tym folderze?"
+            "value" : "Tryb szybki zapisuje obok oryginału. Zezwolić aplikacji Unmuffle na zapis w tym folderze?"
           }
         },
         "ru" : {
@@ -4717,7 +4717,7 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "インスタントモードでは元のファイルと同じ場所に保存します。このフォルダへの保存をUnmuffleに許可しますか?"
+            "value" : "即時モードでは元のファイルと同じ場所に保存します。このフォルダへの保存をUnmuffleに許可しますか?"
           }
         },
         "ko" : {

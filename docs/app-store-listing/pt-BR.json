@@ -2,8 +2,12 @@
   "subtitle": "Limpe a voz dos seus vídeos",
   "promo": "Solte um vídeo, ouça na hora a voz limpa e exporte. Grátis, de código aberto e privado: tudo acontece no seu Mac.",
   "keywords": "ruído,fundo,remover,reduzir,áudio,som,microfone,podcast,melhorar,volume,fala,entrevista,chiado",
-  "description": "O Unmuffle limpa a voz dos seus vídeos. Solte uma gravação de tela, um vlog, uma entrevista ou uma chamada de vídeo, e ele remove o ruído de fundo, equilibra o volume e deixa a fala mais clara, sem mexer na imagem.\n\nSIMPLES POR PADRÃO\n• Três opções: melhorar o áudio, realçar a voz ou dar um tom de podcast, e remover o ruído de fundo.\n• O vídeo começa a tocar com a limpeza aplicada assim que você o solta, então você ouve o resultado na hora.\n• Clique em Exportar e uma cópia é salva. O original nunca é alterado.\n\nTODOS OS CONTROLES QUANDO VOCÊ QUISER\n• Redução de ruído que mede o ruído da sua gravação e se ajusta sozinha.\n• Noise gate, corte de graves e agudos e um equalizador de 8 bandas que você ajusta arrastando.\n• Compressor e normalização de volume no padrão de podcast de −16 LUFS.\n• Corte o início e o fim, e remova pausas longas automaticamente.\n• Alterne entre Original e Processado durante a reprodução para comparar.\n\nA IMAGEM FICA COMO ESTAVA\nA menos que você corte algo, o fluxo de vídeo é copiado byte a byte. Quando há cortes, o codificador por hardware do Mac recodifica o vídeo na taxa de bits original.\n\nPRIVADO E DE CÓDIGO ABERTO\nTudo acontece no seu Mac. O Unmuffle não faz conexões de rede e não coleta dados. O código-fonte está no GitHub sob a licença MIT.",
+  "description": "O Unmuffle limpa a voz dos seus vídeos. Solte uma gravação de tela, um vlog, uma entrevista ou uma chamada de vídeo, e ele remove o ruído de fundo, equilibra o volume e deixa a fala mais clara, sem mexer na imagem.\n\nMODO INSTANTÂNEO\n• Solte um vídeo ou um lote inteiro. Cada um é limpo na hora e salvo como cópia ao lado do original. Sem cliques.\n• As opções de áudio, voz e ruído de fundo ficam ao lado e valem para cada vídeo que você soltar.\n\nSIMPLES POR PADRÃO\n• Três opções: melhorar o áudio, realçar a voz ou dar um tom de podcast, e remover o ruído de fundo.\n• O vídeo começa a tocar com a limpeza aplicada assim que você o solta, então você ouve o resultado na hora.\n• Clique em Exportar e uma cópia é salva. O original nunca é alterado.\n\nTODOS OS CONTROLES QUANDO VOCÊ QUISER\n• Redução de ruído que mede o ruído da sua gravação e se ajusta sozinha.\n• Noise gate, corte de graves e agudos e um equalizador de 8 bandas que você ajusta arrastando.\n• Compressor e normalização de volume no padrão de podcast de −16 LUFS.\n• Corte o início e o fim, e remova pausas longas automaticamente.\n• Alterne entre Original e Processado durante a reprodução para comparar.\n\nA IMAGEM FICA COMO ESTAVA\nA menos que você corte algo, o fluxo de vídeo é copiado byte a byte. Quando há cortes, o codificador por hardware do Mac recodifica o vídeo na taxa de bits original.\n\nPRIVADO E DE CÓDIGO ABERTO\nTudo acontece no seu Mac. O Unmuffle não faz conexões de rede e não coleta dados. O código-fonte está no GitHub sob a licença MIT.",
   "screens": {
+    "instant": {
+      "h1": "É só soltar. O Unmuffle faz o resto.",
+      "sub": "O modo instantâneo limpa cada vídeo que você solta e o salva ao lado do original. Sem cliques."
+    },
     "simple": {
       "h1": "Voz limpa em qualquer vídeo.",
       "sub": "Remove o ruído de fundo, equilibra o volume e deixa a fala mais clara. A imagem não é alterada."
@@ -17,5 +21,11 @@
       "sub": "Grátis e de código aberto. Seus vídeos nunca saem do seu Mac."
     }
   },
-  "sampleFile": "Episódio 12 do podcast"
+  "sampleFile": "Episódio 12 do podcast",
+  "instantFiles": [
+    "Reunião da equipe",
+    "Entrevista",
+    "Vlog dia 3"
+  ],
+  "whatsNew": "• Novo modo instantâneo: solte vídeos e cada um é limpo e salvo ao lado do original, sem cliques.\n• O Unmuffle agora está em 14 idiomas.\n• Mensagens de erro mais claras."
 }

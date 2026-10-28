@@ -35,17 +35,30 @@ noise,denoise,remove,audio,voice,video,podcast,enhance,clean,background,loudness
 
 **Age rating:** 4+ (no objectionable content)
 
-**Screenshots** (2560 × 1600): `docs/screenshots/simple.png`, `adv.png`, `drop.png`
+**Screenshots** (2560 × 1600), in this order: `docs/screenshots/<language>/simple.png`, `instant.png`, `adv.png`, `drop.png`
+
+**What's New in 1.4:**
+
+> • New Instant mode: drop videos and each one is cleaned up and saved next to the original, with nothing to click.
+> • Unmuffle now speaks 14 languages.
+> • Clearer error messages.
 
 **Notes for App Review:**
 
 > No account is needed. Open or drop any video that has speech in it. In Simple mode the video plays
-> with the cleanup applied; press Export to save a copy. Audio is processed on the Mac by the bundled
-> FFmpeg libraries (LGPL), which run as helper tools inside the app's sandbox.
+> with the cleanup applied; press Export to save a copy. In Instant mode (the first button on top),
+> each dropped video is cleaned up and saved next to the original as name-1; the first time for each
+> folder, an Open panel asks for permission to save there (the app keeps a security-scoped bookmark).
+> Audio is processed on the Mac by the bundled FFmpeg libraries (LGPL), which run as helper tools
+> inside the app's sandbox.
 
 ## Description
 
 Unmuffle cleans up the voice in your videos. Drop in a screen recording, a vlog, an interview or a video call, and it removes background noise, evens out the volume and makes speech clearer, without touching the picture.
+
+INSTANT MODE
+• Drop one video or a whole batch. Each one is cleaned up right away and saved next to the original as a copy. Nothing to click.
+• The Audio, Voice and Background Noise choices sit on the side and apply to every video you drop.
 
 SIMPLE BY DEFAULT
 • Three choices: enhance the audio, boost the voice or give it a podcast tone, and remove background noise.

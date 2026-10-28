@@ -2,8 +2,12 @@
   "subtitle": "Clean up voices in videos",
   "promo": "Drop in a video, hear the cleaned-up voice right away, and export. Free, open source and private: everything happens on your Mac.",
   "keywords": "noise,denoise,remove,audio,voice,video,podcast,enhance,clean,background,loudness,mic,speech,sound",
-  "description": "Unmuffle cleans up the voice in your videos. Drop in a screen recording, a vlog, an interview or a video call, and it removes background noise, evens out the volume and makes speech clearer, without touching the picture.\n\nSIMPLE BY DEFAULT\n• Three choices: enhance the audio, boost the voice or give it a podcast tone, and remove background noise.\n• The video plays with the cleanup applied as soon as you drop it in, so you hear the result right away.\n• Press Export and a copy is saved. The original is never changed.\n\nEVERY CONTROL WHEN YOU WANT IT\n• Noise reduction that measures the noise in your recording and sets itself.\n• Noise gate, rumble and hiss filters, and an 8-band EQ you can drag.\n• Compressor and loudness normalization to the −16 LUFS podcast standard.\n• Trim the start and end, and cut out long pauses automatically.\n• Switch between Original and Processed while it plays to compare.\n\nTHE PICTURE STAYS AS IT WAS\nUnless you cut something, the video stream is copied byte for byte. When you do cut, the Mac's hardware encoder re-encodes it at the original bitrate.\n\nPRIVATE AND OPEN SOURCE\nEverything happens on your Mac. Unmuffle makes no network connections and collects no data. The source code is on GitHub under the MIT license.",
+  "description": "Unmuffle cleans up the voice in your videos. Drop in a screen recording, a vlog, an interview or a video call, and it removes background noise, evens out the volume and makes speech clearer, without touching the picture.\n\nINSTANT MODE\n• Drop one video or a whole batch. Each one is cleaned up right away and saved next to the original as a copy. Nothing to click.\n• The Audio, Voice and Background Noise choices sit on the side and apply to every video you drop.\n\nSIMPLE BY DEFAULT\n• Three choices: enhance the audio, boost the voice or give it a podcast tone, and remove background noise.\n• The video plays with the cleanup applied as soon as you drop it in, so you hear the result right away.\n• Press Export and a copy is saved. The original is never changed.\n\nEVERY CONTROL WHEN YOU WANT IT\n• Noise reduction that measures the noise in your recording and sets itself.\n• Noise gate, rumble and hiss filters, and an 8-band EQ you can drag.\n• Compressor and loudness normalization to the −16 LUFS podcast standard.\n• Trim the start and end, and cut out long pauses automatically.\n• Switch between Original and Processed while it plays to compare.\n\nTHE PICTURE STAYS AS IT WAS\nUnless you cut something, the video stream is copied byte for byte. When you do cut, the Mac's hardware encoder re-encodes it at the original bitrate.\n\nPRIVATE AND OPEN SOURCE\nEverything happens on your Mac. Unmuffle makes no network connections and collects no data. The source code is on GitHub under the MIT license.",
   "screens": {
+    "instant": {
+      "h1": "Just drop. Unmuffle does the rest.",
+      "sub": "Instant mode cleans up every video you drop and saves it next to the original. Nothing to click."
+    },
     "simple": {
       "h1": "Clean up the voice in any video.",
       "sub": "Removes background noise, evens out the volume and makes speech clearer. The picture stays untouched."
@@ -17,5 +21,11 @@
       "sub": "Free and open source. Your videos never leave your Mac."
     }
   },
-  "sampleFile": "Podcast Episode 12"
+  "sampleFile": "Podcast Episode 12",
+  "instantFiles": [
+    "Team Call",
+    "Interview",
+    "Vlog Day 3"
+  ],
+  "whatsNew": "• New Instant mode: drop videos and each one is cleaned up and saved next to the original, with nothing to click.\n• Unmuffle now speaks 14 languages.\n• Clearer error messages."
 }

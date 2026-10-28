@@ -2,8 +2,12 @@
   "subtitle": "Heldere stemmen in video's",
   "promo": "Sleep een video erin, hoor meteen de opgeschoonde stem en exporteer. Gratis, open source en privé: alles gebeurt op je Mac.",
   "keywords": "ruis,ruisonderdrukking,ruisfilter,achtergrondgeluid,audio,geluid,spraak,podcast,microfoon,volume",
-  "description": "Unmuffle maakt de stem in je video's helder. Sleep er een schermopname, vlog, interview of videogesprek in en Unmuffle verwijdert achtergrondgeluid, trekt het volume gelijk en maakt spraak duidelijker, zonder het beeld aan te raken.\n\nSTANDAARD EENVOUDIG\n• Drie keuzes: verbeter de audio, versterk de stem of geef hem een podcastklank, en verwijder achtergrondgeluid.\n• Zodra je de video erin sleept, speelt hij af met de verbeteringen erop, dus je hoort het resultaat meteen.\n• Klik op ‘Exporteer’ en er wordt een kopie bewaard. Het origineel blijft altijd ongewijzigd.\n\nALLE INSTELLINGEN ALS JE ZE WILT\n• Ruisonderdrukking die de ruis in je opname meet en zichzelf instelt.\n• Noise gate, rommel- en sisfilter, en een 8-bands equalizer die je met slepen instelt.\n• Compressor en luidheidsnormalisatie naar de podcaststandaard van −16 LUFS.\n• Knip het begin en einde bij en haal lange pauzes automatisch weg.\n• Wissel tijdens het afspelen tussen ‘Origineel’ en ‘Bewerkt’ om te vergelijken.\n\nHET BEELD BLIJFT ZOALS HET WAS\nTenzij je iets wegknipt, wordt de videostream byte voor byte gekopieerd. Knip je wel, dan codeert de hardware-encoder van de Mac hem opnieuw met de oorspronkelijke bitsnelheid.\n\nPRIVÉ EN OPEN SOURCE\nAlles gebeurt op je Mac. Unmuffle maakt geen netwerkverbindingen en verzamelt geen gegevens. De broncode staat op GitHub onder de MIT-licentie.",
+  "description": "Unmuffle maakt de stem in je video's helder. Sleep er een schermopname, vlog, interview of videogesprek in en Unmuffle verwijdert achtergrondgeluid, trekt het volume gelijk en maakt spraak duidelijker, zonder het beeld aan te raken.\n\nDIRECTE MODUS\n• Sleep één video of een hele stapel erin. Elke video wordt meteen opgeschoond en als kopie naast het origineel bewaard. Zonder te klikken.\n• De keuzes voor audio, stem en achtergrondgeluid staan opzij en gelden voor elke video.\n\nSTANDAARD EENVOUDIG\n• Drie keuzes: verbeter de audio, versterk de stem of geef hem een podcastklank, en verwijder achtergrondgeluid.\n• Zodra je de video erin sleept, speelt hij af met de verbeteringen erop, dus je hoort het resultaat meteen.\n• Klik op ‘Exporteer’ en er wordt een kopie bewaard. Het origineel blijft altijd ongewijzigd.\n\nALLE INSTELLINGEN ALS JE ZE WILT\n• Ruisonderdrukking die de ruis in je opname meet en zichzelf instelt.\n• Noise gate, rommel- en sisfilter, en een 8-bands equalizer die je met slepen instelt.\n• Compressor en luidheidsnormalisatie naar de podcaststandaard van −16 LUFS.\n• Knip het begin en einde bij en haal lange pauzes automatisch weg.\n• Wissel tijdens het afspelen tussen ‘Origineel’ en ‘Bewerkt’ om te vergelijken.\n\nHET BEELD BLIJFT ZOALS HET WAS\nTenzij je iets wegknipt, wordt de videostream byte voor byte gekopieerd. Knip je wel, dan codeert de hardware-encoder van de Mac hem opnieuw met de oorspronkelijke bitsnelheid.\n\nPRIVÉ EN OPEN SOURCE\nAlles gebeurt op je Mac. Unmuffle maakt geen netwerkverbindingen en verzamelt geen gegevens. De broncode staat op GitHub onder de MIT-licentie.",
   "screens": {
+    "instant": {
+      "h1": "Gewoon slepen. Unmuffle doet de rest.",
+      "sub": "De directe modus schoont elke video op en bewaart hem naast het origineel. Zonder te klikken."
+    },
     "simple": {
       "h1": "Een heldere stem in elke video.",
       "sub": "Verwijdert achtergrondgeluid, trekt het volume gelijk en maakt spraak duidelijker. Het beeld blijft onaangeroerd."
@@ -17,5 +21,11 @@
       "sub": "Gratis en open source. Je video's verlaten nooit je Mac."
     }
   },
-  "sampleFile": "Podcast aflevering 12"
+  "sampleFile": "Podcast aflevering 12",
+  "instantFiles": [
+    "Teamgesprek",
+    "Interview",
+    "Vlog dag 3"
+  ],
+  "whatsNew": "• Nieuwe directe modus: sleep video's erin en elke video wordt opgeschoond en naast het origineel bewaard, zonder te klikken.\n• Unmuffle is nu beschikbaar in 14 talen.\n• Duidelijkere foutmeldingen."
 }

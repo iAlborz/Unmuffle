@@ -2,8 +2,12 @@
   "subtitle": "Nettoyez la voix de vos vidéos",
   "promo": "Déposez une vidéo, écoutez aussitôt la voix nettoyée, puis exportez. Gratuit, open source et privé : tout se passe sur votre Mac.",
   "keywords": "bruit,fond,supprimer,réduire,débruiteur,audio,son,micro,podcast,améliorer,volume,parole,interview",
-  "description": "Unmuffle nettoie la voix de vos vidéos. Déposez un enregistrement d'écran, un vlog, une interview ou un appel vidéo : il supprime le bruit de fond, égalise le volume et rend la parole plus claire, sans toucher à l'image.\n\nSIMPLE PAR DÉFAUT\n• Trois choix : améliorer l'audio, renforcer la voix ou lui donner un ton podcast, et supprimer le bruit de fond.\n• La vidéo est lue avec le nettoyage appliqué dès que vous la déposez : vous entendez tout de suite le résultat.\n• Cliquez sur Exporter et une copie est enregistrée. L'original n'est jamais modifié.\n\nTOUS LES RÉGLAGES QUAND VOUS LE VOULEZ\n• Une réduction du bruit qui mesure le bruit de votre enregistrement et se règle toute seule.\n• Noise gate, coupure des graves et des aigus, et un égaliseur 8 bandes que vous réglez en faisant glisser les points.\n• Compresseur et normalisation du volume à −16 LUFS, la norme des podcasts.\n• Coupez le début et la fin, et retirez automatiquement les longues pauses.\n• Passez d'Original à Traité pendant la lecture pour comparer.\n\nL'IMAGE RESTE TELLE QUELLE\nSauf si vous coupez quelque chose, le flux vidéo est copié octet par octet. Si vous coupez, l'encodeur matériel du Mac le réencode au débit d'origine.\n\nPRIVÉ ET OPEN SOURCE\nTout se passe sur votre Mac. Unmuffle n'établit aucune connexion réseau et ne collecte aucune donnée. Le code source est sur GitHub sous licence MIT.",
+  "description": "Unmuffle nettoie la voix de vos vidéos. Déposez un enregistrement d'écran, un vlog, une interview ou un appel vidéo : il supprime le bruit de fond, égalise le volume et rend la parole plus claire, sans toucher à l'image.\n\nMODE INSTANTANÉ\n• Déposez une vidéo ou tout un lot. Chacune est nettoyée aussitôt et enregistrée en copie à côté de l'original. Aucun clic.\n• Les choix Audio, Voix et Bruit de fond restent sur le côté et s'appliquent à chaque vidéo déposée.\n\nSIMPLE PAR DÉFAUT\n• Trois choix : améliorer l'audio, renforcer la voix ou lui donner un ton podcast, et supprimer le bruit de fond.\n• La vidéo est lue avec le nettoyage appliqué dès que vous la déposez : vous entendez tout de suite le résultat.\n• Cliquez sur Exporter et une copie est enregistrée. L'original n'est jamais modifié.\n\nTOUS LES RÉGLAGES QUAND VOUS LE VOULEZ\n• Une réduction du bruit qui mesure le bruit de votre enregistrement et se règle toute seule.\n• Noise gate, coupure des graves et des aigus, et un égaliseur 8 bandes que vous réglez en faisant glisser les points.\n• Compresseur et normalisation du volume à −16 LUFS, la norme des podcasts.\n• Coupez le début et la fin, et retirez automatiquement les longues pauses.\n• Passez d'Original à Traité pendant la lecture pour comparer.\n\nL'IMAGE RESTE TELLE QUELLE\nSauf si vous coupez quelque chose, le flux vidéo est copié octet par octet. Si vous coupez, l'encodeur matériel du Mac le réencode au débit d'origine.\n\nPRIVÉ ET OPEN SOURCE\nTout se passe sur votre Mac. Unmuffle n'établit aucune connexion réseau et ne collecte aucune donnée. Le code source est sur GitHub sous licence MIT.",
   "screens": {
+    "instant": {
+      "h1": "Déposez. Unmuffle fait le reste.",
+      "sub": "Le mode instantané nettoie chaque vidéo déposée et l'enregistre à côté de l'original. Aucun clic."
+    },
     "simple": {
       "h1": "Une voix nette dans chaque vidéo.",
       "sub": "Supprime le bruit de fond, égalise le volume et rend la parole plus claire. L'image reste intacte."
@@ -17,5 +21,11 @@
       "sub": "Gratuit et open source. Vos vidéos ne quittent jamais votre Mac."
     }
   },
-  "sampleFile": "Épisode 12 du podcast"
+  "sampleFile": "Épisode 12 du podcast",
+  "instantFiles": [
+    "Appel d'équipe",
+    "Interview",
+    "Vlog jour 3"
+  ],
+  "whatsNew": "• Nouveau mode instantané : déposez des vidéos, chacune est nettoyée et enregistrée à côté de l'original, sans aucun clic.\n• Unmuffle est désormais disponible en 14 langues.\n• Messages d'erreur plus clairs."
 }

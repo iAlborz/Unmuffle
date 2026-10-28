@@ -2,8 +2,12 @@
   "subtitle": "Pulisci la voce nei tuoi video",
   "promo": "Trascina un video, ascolta subito la voce ripulita ed esporta. Gratis, open source e privato: tutto avviene sul tuo Mac.",
   "keywords": "rumore,fondo,rimuovere,ridurre,audio,suono,microfono,podcast,migliorare,volume,parlato,intervista",
-  "description": "Unmuffle pulisce la voce nei tuoi video. Trascina una registrazione dello schermo, un vlog, un'intervista o una videochiamata: rimuove il rumore di fondo, uniforma il volume e rende il parlato più chiaro, senza toccare l'immagine.\n\nSEMPLICE FIN DA SUBITO\n• Tre scelte: migliorare l'audio, potenziare la voce o darle un tono da podcast, e rimuovere il rumore di fondo.\n• Il video parte con la pulizia applicata appena lo trascini, così senti subito il risultato.\n• Premi Esporta e viene salvata una copia. L'originale non viene mai modificato.\n\nOGNI CONTROLLO QUANDO TI SERVE\n• Riduzione del rumore che misura il rumore della registrazione e si regola da sola.\n• Noise gate, taglio dei bassi e degli acuti, e un equalizzatore a 8 bande da regolare trascinando.\n• Compressore e normalizzazione del volume allo standard podcast di −16 LUFS.\n• Taglia l'inizio e la fine ed elimina automaticamente le pause lunghe.\n• Passa da Originale a Elaborato durante la riproduzione per confrontare.\n\nL'IMMAGINE RESTA COM'ERA\nSe non tagli nulla, il flusso video viene copiato byte per byte. Se tagli, il codificatore hardware del Mac lo ricodifica al bitrate originale.\n\nPRIVATO E OPEN SOURCE\nTutto avviene sul tuo Mac. Unmuffle non si connette alla rete e non raccoglie dati. Il codice sorgente è su GitHub con licenza MIT.",
+  "description": "Unmuffle pulisce la voce nei tuoi video. Trascina una registrazione dello schermo, un vlog, un'intervista o una videochiamata: rimuove il rumore di fondo, uniforma il volume e rende il parlato più chiaro, senza toccare l'immagine.\n\nMODALITÀ ISTANTANEA\n• Trascina un video o un intero gruppo. Ognuno viene ripulito subito e salvato come copia accanto all'originale. Senza clic.\n• Le scelte per audio, voce e rumore di fondo restano di lato e valgono per ogni video che trascini.\n\nSEMPLICE FIN DA SUBITO\n• Tre scelte: migliorare l'audio, potenziare la voce o darle un tono da podcast, e rimuovere il rumore di fondo.\n• Il video parte con la pulizia applicata appena lo trascini, così senti subito il risultato.\n• Premi Esporta e viene salvata una copia. L'originale non viene mai modificato.\n\nOGNI CONTROLLO QUANDO TI SERVE\n• Riduzione del rumore che misura il rumore della registrazione e si regola da sola.\n• Noise gate, taglio dei bassi e degli acuti, e un equalizzatore a 8 bande da regolare trascinando.\n• Compressore e normalizzazione del volume allo standard podcast di −16 LUFS.\n• Taglia l'inizio e la fine ed elimina automaticamente le pause lunghe.\n• Passa da Originale a Elaborato durante la riproduzione per confrontare.\n\nL'IMMAGINE RESTA COM'ERA\nSe non tagli nulla, il flusso video viene copiato byte per byte. Se tagli, il codificatore hardware del Mac lo ricodifica al bitrate originale.\n\nPRIVATO E OPEN SOURCE\nTutto avviene sul tuo Mac. Unmuffle non si connette alla rete e non raccoglie dati. Il codice sorgente è su GitHub con licenza MIT.",
   "screens": {
+    "instant": {
+      "h1": "Trascina e basta. Unmuffle fa il resto.",
+      "sub": "La modalità istantanea ripulisce ogni video che trascini e lo salva accanto all'originale. Senza clic."
+    },
     "simple": {
       "h1": "Una voce pulita in ogni video.",
       "sub": "Rimuove il rumore di fondo, uniforma il volume e rende il parlato più chiaro. L'immagine resta intatta."
@@ -17,5 +21,11 @@
       "sub": "Gratis e open source. I tuoi video non lasciano mai il tuo Mac."
     }
   },
-  "sampleFile": "Podcast puntata 12"
+  "sampleFile": "Podcast puntata 12",
+  "instantFiles": [
+    "Call di team",
+    "Intervista",
+    "Vlog giorno 3"
+  ],
+  "whatsNew": "• Nuova modalità istantanea: trascina i video e ognuno viene ripulito e salvato accanto all'originale, senza clic.\n• Unmuffle ora parla 14 lingue.\n• Messaggi di errore più chiari."
 }

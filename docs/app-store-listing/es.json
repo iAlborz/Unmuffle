@@ -2,8 +2,12 @@
   "subtitle": "Limpia la voz de tus vídeos",
   "promo": "Arrastra un vídeo, escucha al instante la voz limpia y expórtalo. Gratis, de código abierto y privado: todo ocurre en tu Mac.",
   "keywords": "ruido,fondo,quitar,reducir,eliminar,audio,video,podcast,mejorar,sonido,micrófono,volumen,grabación",
-  "description": "Unmuffle limpia la voz de tus vídeos. Arrastra una grabación de pantalla, un vlog, una entrevista o una videollamada, y elimina el ruido de fondo, iguala el volumen y hace que la voz se entienda mejor, sin tocar la imagen.\n\nSENCILLO DE SERIE\n• Tres opciones: mejorar el audio, realzar la voz o darle un tono de podcast, y quitar el ruido de fondo.\n• El vídeo se reproduce con la limpieza aplicada nada más soltarlo, así que oyes el resultado al instante.\n• Pulsa Exportar y se guarda una copia. El original nunca se modifica.\n\nTODOS LOS CONTROLES CUANDO LOS QUIERAS\n• Reducción de ruido que mide el ruido de tu grabación y se ajusta sola.\n• Puerta de ruido, filtros de graves y agudos, y un ecualizador de 8 bandas que se ajusta arrastrando.\n• Compresor y normalización del volumen al estándar de podcast de −16 LUFS.\n• Recorta el principio y el final, y quita las pausas largas automáticamente.\n• Cambia entre Original y Procesado durante la reproducción para comparar.\n\nLA IMAGEN QUEDA COMO ESTABA\nSalvo que cortes algo, la pista de vídeo se copia byte a byte. Si cortas, el codificador por hardware del Mac la vuelve a codificar con la tasa de bits original.\n\nPRIVADO Y DE CÓDIGO ABIERTO\nTodo ocurre en tu Mac. Unmuffle no se conecta a internet ni recopila datos. El código fuente está en GitHub con licencia MIT.",
+  "description": "Unmuffle limpia la voz de tus vídeos. Arrastra una grabación de pantalla, un vlog, una entrevista o una videollamada, y elimina el ruido de fondo, iguala el volumen y hace que la voz se entienda mejor, sin tocar la imagen.\n\nMODO INSTANTÁNEO\n• Arrastra un vídeo o un lote entero. Cada uno se limpia al instante y se guarda como copia junto al original. Sin hacer clic en nada.\n• Las opciones de audio, voz y ruido de fondo están a un lado y se aplican a cada vídeo que arrastras.\n\nSENCILLO DE SERIE\n• Tres opciones: mejorar el audio, realzar la voz o darle un tono de podcast, y quitar el ruido de fondo.\n• El vídeo se reproduce con la limpieza aplicada nada más soltarlo, así que oyes el resultado al instante.\n• Pulsa Exportar y se guarda una copia. El original nunca se modifica.\n\nTODOS LOS CONTROLES CUANDO LOS QUIERAS\n• Reducción de ruido que mide el ruido de tu grabación y se ajusta sola.\n• Puerta de ruido, filtros de graves y agudos, y un ecualizador de 8 bandas que se ajusta arrastrando.\n• Compresor y normalización del volumen al estándar de podcast de −16 LUFS.\n• Recorta el principio y el final, y quita las pausas largas automáticamente.\n• Cambia entre Original y Procesado durante la reproducción para comparar.\n\nLA IMAGEN QUEDA COMO ESTABA\nSalvo que cortes algo, la pista de vídeo se copia byte a byte. Si cortas, el codificador por hardware del Mac la vuelve a codificar con la tasa de bits original.\n\nPRIVADO Y DE CÓDIGO ABIERTO\nTodo ocurre en tu Mac. Unmuffle no se conecta a internet ni recopila datos. El código fuente está en GitHub con licencia MIT.",
   "screens": {
+    "instant": {
+      "h1": "Solo arrastra. Unmuffle hace el resto.",
+      "sub": "El modo instantáneo limpia cada vídeo que arrastras y lo guarda junto al original. Sin hacer clic en nada."
+    },
     "simple": {
       "h1": "Limpia la voz de cualquier vídeo.",
       "sub": "Elimina el ruido de fondo, iguala el volumen y hace que la voz se entienda mejor. La imagen no se toca."
@@ -17,5 +21,11 @@
       "sub": "Gratis y de código abierto. Tus vídeos nunca salen de tu Mac."
     }
   },
-  "sampleFile": "Episodio 12 del podcast"
+  "sampleFile": "Episodio 12 del podcast",
+  "instantFiles": [
+    "Llamada de equipo",
+    "Entrevista",
+    "Vlog día 3"
+  ],
+  "whatsNew": "• Nuevo modo instantáneo: arrastra vídeos y cada uno se limpia y se guarda junto al original, sin hacer clic en nada.\n• Unmuffle ya está disponible en 14 idiomas.\n• Mensajes de error más claros."
 }
