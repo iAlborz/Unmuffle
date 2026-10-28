@@ -7,6 +7,16 @@
     <description>Updates for the GitHub version of Unmuffle.</description>
     <language>en</language>
     <item>
+      <title>Unmuffle 1.4.1</title>
+      <pubDate>Wed, 28 Oct 2026 21:11:54 +0000</pubDate>
+      <sparkle:version>7</sparkle:version>
+      <sparkle:shortVersionString>1.4.1</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <sparkle:fullReleaseNotesLink>https://github.com/iAlborz/Unmuffle/releases</sparkle:fullReleaseNotesLink>
+      <description><![CDATA[<ul><li>In Japanese and Polish, the mode names at the top of the window are no longer cut off.</li></ul>]]></description>
+      <enclosure url="https://github.com/iAlborz/Unmuffle/releases/download/v1.4.1/Unmuffle.zip" type="application/octet-stream" sparkle:edSignature="viEi8gB4o5C79urbKEeJ04tgLdUt7PaWSPkyliROTZqm7v9RJ37CtikodupsdYpgjM55PsHwexIUk2MLS5b5Bg==" length="22939104"/>
+    </item>
+    <item>
       <title>Unmuffle 1.4</title>
       <pubDate>Wed, 28 Oct 2026 16:58:37 +0000</pubDate>
       <sparkle:version>5</sparkle:version>
