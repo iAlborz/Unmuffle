@@ -4,11 +4,17 @@ import AppKit
 @main
 struct UnmuffleApp: App {
     @StateObject private var model = ProjectModel()
+    #if canImport(Sparkle)
+    @StateObject private var updates = UpdateController()
+    #endif
 
     var body: some Scene {
         WindowGroup("Unmuffle") {
             ContentView()
                 .environmentObject(model)
+                #if canImport(Sparkle)
+                .environmentObject(updates)
+                #endif
                 .onAppear {
                     NSApp.setActivationPolicy(.regular)
                     NSApp.activate(ignoringOtherApps: true)
@@ -53,6 +59,11 @@ struct UnmuffleApp: App {
         }
         .defaultSize(width: 560, height: 400)
         .commands {
+            #if canImport(Sparkle)
+            CommandGroup(after: .appInfo) {
+                Button("Check for Updates…") { updates.checkForUpdates() }
+            }
+            #endif
             CommandGroup(replacing: .newItem) {
                 Button("Open Video…") { model.openPanel() }
                     .keyboardShortcut("o")
@@ -74,6 +85,9 @@ struct ContentView: View {
             else if m.simpleMode { SimpleView().frame(minWidth: 740, minHeight: 500) }
             else { EditorView().frame(minWidth: 1100, minHeight: 720) }
         }
+        #if canImport(Sparkle)
+        .safeAreaInset(edge: .top, spacing: 0) { UpdateBanner() }
+        #endif
         .navigationTitle("Unmuffle")
         .navigationSubtitle(m.url?.lastPathComponent ?? "")
         .toolbar {

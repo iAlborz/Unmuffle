@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Update feed for the GitHub version of Unmuffle, read by Sparkle. scripts/release.sh adds each release. -->
+<rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle">
+  <channel>
+    <title>Unmuffle</title>
+    <link>https://github.com/iAlborz/Unmuffle</link>
+    <description>Updates for the GitHub version of Unmuffle.</description>
+    <language>en</language>
+    <item>
+      <title>Unmuffle 1.3</title>
+      <pubDate>Wed, 28 Oct 2026 03:22:45 +0000</pubDate>
+      <sparkle:version>4</sparkle:version>
+      <sparkle:shortVersionString>1.3</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <sparkle:fullReleaseNotesLink>https://github.com/iAlborz/Unmuffle/releases</sparkle:fullReleaseNotesLink>
+      <description><![CDATA[<ul><li><b>Unmuffle now updates itself.</b> When a new version is out, a small banner appears at the top of the window, plus a notification if Unmuffle is in the background. Click <b>Update</b> and it downloads, installs and relaunches on its own.</li><li><b>Check for Updates…</b> in the Unmuffle menu, whenever you want to look yourself.</li><li>Updates are signed, and Unmuffle only installs ones signed by us.</li></ul>]]></description>
+      <enclosure url="https://github.com/iAlborz/Unmuffle/releases/download/v1.3/Unmuffle.zip" type="application/octet-stream" sparkle:edSignature="etxROs/gBZzc3u46Z8awlF7OxUXApfpDakWSUTYTejzlHXgJ7qibSn0hqZlTIEOZLfFUR3ppry4Gszf6Zt48Bw==" length="22804236"/>
+    </item>
+  </channel>
+</rss>
