@@ -9,7 +9,7 @@ enum ToolError: LocalizedError {
         switch self {
         case .ffmpegMissing: return "ffmpeg was not found. Install it in Terminal with:  brew install ffmpeg"
         case .failed(let s): return s
-        case .noAudio: return "This video has no audio track."
+        case .noAudio: return String(localized: "This video has no audio track.")
         }
     }
 }
@@ -135,7 +135,7 @@ struct MediaInfo {
                                                "-show_format", "-show_streams", url.path])
         guard r.status == 0,
               let json = try? JSONSerialization.jsonObject(with: r.stdout) as? [String: Any] else {
-            throw ToolError.failed("Could not read this file.\n\(r.stderr.suffix(500))")
+            throw ToolError.failed(String(localized: "Couldn't read this video.") + "\n" + r.stderr.suffix(500))
         }
         var info = MediaInfo()
         let fmt = json["format"] as? [String: Any] ?? [:]

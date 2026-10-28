@@ -23,12 +23,15 @@ struct UnmuffleApp: App {
                     DispatchQueue.main.async {
                         guard let win = NSApp.windows.first else { return }
                         let f = win.frame
-                        win.setFrame(NSRect(x: f.minX, y: f.maxY - 400, width: 560, height: 400), display: true)
+                        win.setFrame(NSRect(x: f.minX, y: f.maxY - 400, width: 620, height: 400), display: true)
                     }
-                    // Allow: Unmuffle.app/Contents/MacOS/Unmuffle /path/to/video.mp4
-                    if let path = CommandLine.arguments.dropFirst().first(where: { !$0.hasPrefix("-") }),
-                       model.url == nil {
-                        Task { await model.load(URL(fileURLWithPath: path)) }
+                    // Allow: Unmuffle.app/Contents/MacOS/Unmuffle /path/to/video.mp4 (several in Instant mode)
+                    let paths = CommandLine.arguments.dropFirst()
+                        .filter { !$0.hasPrefix("-") && FileManager.default.fileExists(atPath: $0) }
+                        .map { URL(fileURLWithPath: $0) }
+                    if model.mode == .instant { model.addInstant(paths) }
+                    else if let first = paths.first, model.url == nil {
+                        Task { await model.load(first) }
                     }
                     // Debug: UNMUFFLE_AUTOPLAY=1 switches to Processed and plays 3 s after launch.
                     if ProcessInfo.processInfo.environment["UNMUFFLE_AUTOPLAY"] != nil {
@@ -57,7 +60,7 @@ struct UnmuffleApp: App {
                     }
                 }
         }
-        .defaultSize(width: 560, height: 400)
+        .defaultSize(width: 620, height: 400)
         .commands {
             #if canImport(Sparkle)
             CommandGroup(after: .appInfo) {
@@ -78,16 +81,27 @@ struct UnmuffleApp: App {
 struct ContentView: View {
     @EnvironmentObject var m: ProjectModel
 
+    private var errorLines: [Substring] {
+        (m.errorMessage ?? "").split(separator: "\n", maxSplits: 1, omittingEmptySubsequences: false)
+    }
+
     var body: some View {
         ZStack {
-            // The window grows to each view's minimum size when the view changes.
-            if m.url == nil { DropZoneView().frame(minWidth: 460, minHeight: 320) }
-            else if m.simpleMode { SimpleView().frame(minWidth: 740, minHeight: 500) }
+            // The window grows to each view's minimum size when the view changes. 620 fits the mode picker.
+            if m.mode == .instant { InstantView().frame(minWidth: 620, minHeight: 360) }
+            else if m.url == nil { DropZoneView().frame(minWidth: 620, minHeight: 320) }
+            else if m.mode == .simple { SimpleView().frame(minWidth: 740, minHeight: 500) }
             else { EditorView().frame(minWidth: 1100, minHeight: 720) }
         }
         #if canImport(Sparkle)
         .safeAreaInset(edge: .top, spacing: 0) { UpdateBanner() }
         #endif
+        // The first line of an error is the headline; ffmpeg's details, if any, follow it.
+        .alert(errorLines.first.map(String.init) ?? "",
+               isPresented: Binding(get: { m.errorMessage != nil }, set: { if !$0 { m.errorMessage = nil } })) {
+        } message: {
+            Text(errorLines.dropFirst().first.map(String.init) ?? "")
+        }
         .navigationTitle("Unmuffle")
         .navigationSubtitle(m.url?.lastPathComponent ?? "")
         .toolbar {
@@ -97,15 +111,17 @@ struct ContentView: View {
                 }
                 .labelStyle(.titleAndIcon)
                 .help("Open another video (⌘O)")
-                .disabled(m.isBusy)
+                .disabled(m.isBusy && m.mode != .instant)  // Instant mode queues more videos
             }
             ToolbarItem(placement: .primaryAction) {
-                Picker("", selection: $m.simpleMode) {
-                    Text("Simple").tag(true)
-                    Text("Advanced").tag(false)
+                Picker("", selection: $m.mode) {
+                    Text("Instant").tag(AppMode.instant)
+                    Text("Simple").tag(AppMode.simple)
+                    Text("Advanced").tag(AppMode.advanced)
                 }
                 .pickerStyle(.segmented)
-                .frame(width: 160)
+                .frame(width: 216)
+                .disabled(m.instantRunning)
             }
         }
     }

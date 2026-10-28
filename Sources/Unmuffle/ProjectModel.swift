@@ -40,9 +40,18 @@ final class ProjectModel: ObservableObject {
     let silencePadding: Double = 0.12
     @Published var silences: [SilenceSegment] = [] { didSet { scheduleLiveRestart(); autoDenoiseIfNeeded() } }
 
-    @Published var simpleMode: Bool = UserDefaults.standard.object(forKey: "simpleMode") as? Bool ?? true {
-        didSet { UserDefaults.standard.set(simpleMode, forKey: "simpleMode") }
+    /// The mode picked on top of the window. Versions before 1.4 stored only Simple or Advanced, as "simpleMode".
+    @Published var mode: AppMode = UserDefaults.standard.string(forKey: "mode").flatMap(AppMode.init)
+        ?? (UserDefaults.standard.object(forKey: "simpleMode") as? Bool ?? true ? .simple : .advanced) {
+        didSet {
+            UserDefaults.standard.set(mode.rawValue, forKey: "mode")
+            // Instant mode has no player. Close the video that Simple or Advanced had open.
+            if mode == .instant && !isBusy { reset() }
+        }
     }
+    /// Instant mode: dropped videos, oldest first.
+    @Published var instantJobs: [InstantJob] = []
+    @Published private(set) var instantRunning = false
     @Published var simpleChoices = SimpleChoices()
     /// Start playing as soon as a video is opened.
     @Published var autoplay: Bool = UserDefaults.standard.object(forKey: "autoplay") as? Bool ?? true {
@@ -89,6 +98,7 @@ final class ProjectModel: ObservableObject {
     var toolsAvailable: Bool { Tools.ffmpeg != nil && Tools.ffprobe != nil }
 
     init() {
+        FolderAccess.restore()
         timeObserver = player.addPeriodicTimeObserver(
             forInterval: CMTime(seconds: 0.04, preferredTimescale: 600), queue: .main
         ) { [weak self] t in
@@ -141,10 +151,10 @@ final class ProjectModel: ObservableObject {
     func openPanel() {
         let p = NSOpenPanel()
         p.allowedContentTypes = [.movie, .video, .mpeg4Movie, .quickTimeMovie, .avi]
-        p.allowsMultipleSelection = false
-        if p.runModal() == .OK, let u = p.url {
-            Task { await load(u) }
-        }
+        p.allowsMultipleSelection = mode == .instant
+        guard p.runModal() == .OK else { return }
+        if mode == .instant { addInstant(p.urls) }
+        else if let u = p.url { Task { await load(u) } }
     }
 
     func reset() {
@@ -188,8 +198,8 @@ final class ProjectModel: ObservableObject {
         }
         isBusy = false
         guard url != nil else { return }
-        // Simple mode: the cards apply to every new video, so Export works without touching them.
-        if simpleMode { applySimpleChoices(andPlay: autoplay) }
+        // Simple and Instant mode: the choices apply to every new video, so Export works without touching them.
+        if mode != .advanced { applySimpleChoices(andPlay: autoplay && mode == .simple) }
         else if autoplay { play() }
     }
 
@@ -202,7 +212,7 @@ final class ProjectModel: ObservableObject {
         let r = try await job.run(ff, ["-v", "error", "-nostdin", "-i", u.path, "-map", "0:a:0",
                                        "-ac", "1", "-ar", "8000", "-f", "s16le", "-"])
         currentJob = nil
-        guard r.status == 0 else { throw ToolError.failed("Audio analysis failed:\n\(r.stderr.suffix(600))") }
+        guard r.status == 0 else { throw ToolError.failed(String(localized: "Couldn't read the audio.") + "\n" + r.stderr.suffix(600)) }
         let data = r.stdout
         let windowSamples = Int(8000 * window)
         let (p, rms) = await Task.detached(priority: .userInitiated) {
@@ -251,7 +261,7 @@ final class ProjectModel: ObservableObject {
     private func scheduleProcessedWaveform() {
         processedWaveTask?.cancel()
         processedWaveJob?.cancel()
-        guard let u = url, let ff = Tools.ffmpeg, !peaks.isEmpty else { return }
+        guard let u = url, let ff = Tools.ffmpeg, !peaks.isEmpty, mode != .instant else { return }
         let af = settings.filterString()
         if af == "anull" { processedPeaks = []; return }
         let windowSamples = Int(8000 * window)
@@ -560,7 +570,7 @@ final class ProjectModel: ObservableObject {
 
     func export() async {
         guard let u = url, !isBusy else { return }
-        guard !keepSegments().isEmpty else { errorMessage = "Nothing is left to save. Check the trim range."; return }
+        guard !keepSegments().isEmpty else { errorMessage = String(localized: "Nothing is left to save. Check the trim range."); return }
         // Ask where to save, suggesting name-1 next to the original. The sandbox only allows
         // writing where the user chooses.
         let suggested = Self.nextOutputURL(for: u)
@@ -599,7 +609,7 @@ final class ProjectModel: ObservableObject {
             } else if r.status == 0 {
                 onSuccess()
             } else {
-                errorMessage = "ffmpeg failed:\n" + String(r.stderr.suffix(1200))
+                errorMessage = String(localized: "Couldn't save the video.") + "\n" + r.stderr.suffix(1200)
             }
         } catch {
             errorMessage = error.localizedDescription
@@ -610,4 +620,45 @@ final class ProjectModel: ObservableObject {
     }
 
     func cancel() { currentJob?.cancel() }
+
+    // MARK: Instant mode
+
+    /// Cleans up each video with the Simple choices and saves it next to the original, one at a time.
+    func addInstant(_ urls: [URL]) {
+        instantJobs += urls.map { InstantJob(input: $0) }
+        guard !instantRunning else { return }
+        instantRunning = true
+        Task {
+            while let job = instantJobs.first(where: { $0.state == .waiting }) {
+                setInstantState(.working, for: job.id)
+                setInstantState(await runInstant(job.input), for: job.id)
+            }
+            instantRunning = false
+        }
+    }
+
+    private func setInstantState(_ state: InstantJob.State, for id: UUID) {
+        if let i = instantJobs.firstIndex(where: { $0.id == id }) { instantJobs[i].state = state }
+    }
+
+    private func runInstant(_ input: URL) async -> InstantJob.State {
+        await load(input)
+        defer { reset() }
+        // load and runFFmpeg report problems in errorMessage. Show them on the video's row instead.
+        func failure(_ fallback: String) -> InstantJob.State {
+            let message = errorMessage ?? fallback
+            errorMessage = nil
+            return .failed(message)
+        }
+        guard url == input else { return failure(String(localized: "Couldn't read this video.")) }
+        guard FolderAccess.ensureWritable(input.deletingLastPathComponent()) else {
+            return .failed(String(localized: "No permission to save in this folder."))
+        }
+        let out = Self.nextOutputURL(for: input)
+        var saved = false
+        await runFFmpeg(args: buildArgs(input: input, output: out),
+                        label: String(localized: "Saving \(out.lastPathComponent)…"),
+                        totalDuration: outputDuration) { saved = true }
+        return saved ? .saved(out) : failure(String(localized: "Cancelled."))
+    }
 }

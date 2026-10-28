@@ -102,6 +102,10 @@ also choose **Unmuffle → Check for Updates…** at any time.
 
 ## How to use it
 
+**Instant mode** is the quickest. Drop one or more videos on the window (or press ⌘O) and each one is
+cleaned up with the choices on the right and saved next to the original as `name-1.mp4`. There's
+nothing to confirm. The Mac App Store version asks once per folder for permission to save there.
+
 Drop a video on the window (or press ⌘O). In Simple mode, the default, the video starts playing with
 the cleanup applied, so you hear the result right away. Press **Export** and confirm where to save.
 It suggests `name-1.mp4` next to the original (then `name-2`, and so on). Turn off **Auto-play** at

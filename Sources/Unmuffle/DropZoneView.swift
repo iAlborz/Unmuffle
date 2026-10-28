@@ -44,15 +44,20 @@ struct DropZoneView: View {
 extension View {
     func videoDrop(model: ProjectModel, targeted: Binding<Bool>? = nil) -> some View {
         onDrop(of: [.fileURL], isTargeted: targeted) { providers in
-            guard let p = providers.first(where: { $0.hasItemConformingToTypeIdentifier(UTType.fileURL.identifier) }) else {
-                return false
-            }
-            p.loadItem(forTypeIdentifier: UTType.fileURL.identifier, options: nil) { item, _ in
-                var u: URL?
-                if let d = item as? Data { u = URL(dataRepresentation: d, relativeTo: nil) }
-                else if let x = item as? URL { u = x }
-                guard let u else { return }
-                Task { @MainActor in await model.load(u) }
+            let files = providers.filter { $0.hasItemConformingToTypeIdentifier(UTType.fileURL.identifier) }
+            // Instant mode takes every dropped video; the other modes open the first.
+            let instant = model.mode == .instant
+            guard !files.isEmpty else { return false }
+            for p in instant ? files : [files[0]] {
+                p.loadItem(forTypeIdentifier: UTType.fileURL.identifier, options: nil) { item, _ in
+                    var u: URL?
+                    if let d = item as? Data { u = URL(dataRepresentation: d, relativeTo: nil) }
+                    else if let x = item as? URL { u = x }
+                    guard let u else { return }
+                    Task { @MainActor in
+                        if instant { model.addInstant([u]) } else { await model.load(u) }
+                    }
+                }
             }
             return true
         }

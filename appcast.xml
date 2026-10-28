@@ -7,6 +7,16 @@
     <description>Updates for the GitHub version of Unmuffle.</description>
     <language>en</language>
     <item>
+      <title>Unmuffle 1.4</title>
+      <pubDate>Wed, 28 Oct 2026 16:58:37 +0000</pubDate>
+      <sparkle:version>5</sparkle:version>
+      <sparkle:shortVersionString>1.4</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <sparkle:fullReleaseNotesLink>https://github.com/iAlborz/Unmuffle/releases</sparkle:fullReleaseNotesLink>
+      <description><![CDATA[<ul><li><b>Instant mode.</b> Drop videos and Unmuffle cleans them up right away, saving each one next to the original as `name-1`. No player, no Export button, nothing to confirm. Drop as many as you like; they're done one after another.</li><li>The Audio, Voice and Background Noise choices sit small on the right and apply to every video you drop.</li><li>Instant is the first of the three modes at the top of the window.</li></ul>]]></description>
+      <enclosure url="https://github.com/iAlborz/Unmuffle/releases/download/v1.4/Unmuffle.zip" type="application/octet-stream" sparkle:edSignature="nKXWTeuY+YmKHjSn18dLrKIgCK8COUvX4ZCXqc8dQodT7A9UeBsCyyzFWaLL8MaVsXvoLPeH7kzPOMq7BvevAg==" length="22939111"/>
+    </item>
+    <item>
       <title>Unmuffle 1.3</title>
       <pubDate>Wed, 28 Oct 2026 03:22:45 +0000</pubDate>
       <sparkle:version>4</sparkle:version>

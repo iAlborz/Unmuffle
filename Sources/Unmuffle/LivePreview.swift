@@ -85,7 +85,7 @@ final class LivePreview: @unchecked Sendable {
         guard isCurrent(gen) else { return }
         guard !first.isEmpty else {
             p.terminate()
-            throw ToolError.failed("ffmpeg produced no audio for the preview.")
+            throw ToolError.failed(String(localized: "Couldn't play the cleaned-up sound."))
         }
 
         var leftover = Data()
