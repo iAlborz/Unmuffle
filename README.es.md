@@ -10,7 +10,6 @@ La imagen no se toca.</p>
   <a href="https://github.com/iAlborz/Unmuffle/releases/latest"><img src="https://img.shields.io/github/v/release/iAlborz/Unmuffle?style=flat-square&label=versi%C3%B3n&color=38BDF8" alt="Última versión"></a>
   <img src="https://img.shields.io/badge/macOS-14%2B-555?style=flat-square&logo=apple&logoColor=white" alt="macOS 14 o posterior">
   <img src="https://img.shields.io/badge/idiomas-14-34D399?style=flat-square" alt="14 idiomas">
-  <a href="https://github.com/iAlborz/Unmuffle/releases"><img src="https://img.shields.io/github/downloads/iAlborz/Unmuffle/total?style=flat-square&label=descargas&color=555" alt="Descargas"></a>
   <a href="LICENSE"><img src="https://img.shields.io/github/license/iAlborz/Unmuffle?style=flat-square&label=licencia&color=555" alt="Licencia MIT"></a>
 </p>
 
@@ -20,8 +19,16 @@ La imagen no se toca.</p>
   <a href="https://apps.apple.com/app/unmuffle/id6825195286"><img src="https://toolbox.marketingtools.apple.com/api/badges/download-on-the-mac-app-store/black/es-es?size=250x83" height="48" alt="Descárgalo en el Mac App Store"></a>
 </p>
 
-<p align="center"><sub>Apple Silicon e Intel · macOS 14 o posterior · Notarizada por Apple<br>
-<a href="README.md">English</a> · <b>Español</b> · <a href="README.fr.md">Français</a> · <a href="README.de.md">Deutsch</a> · <a href="README.it.md">Italiano</a> · <a href="README.pt-BR.md">Português</a> · <a href="README.nl.md">Nederlands</a> · <a href="README.pl.md">Polski</a> · <a href="README.ru.md">Русский</a> · <a href="README.tr.md">Türkçe</a> · <a href="README.ja.md">日本語</a> · <a href="README.ko.md">한국어</a> · <a href="README.zh-Hans.md">简体中文</a> · <a href="README.zh-Hant.md">繁體中文</a></sub></p>
+<p align="center"><sub>Apple Silicon e Intel · macOS 14 o posterior · Notarizada por Apple</sub></p>
+
+<div align="center">
+<details>
+<summary>🌐 <b>Español</b> · 13 idiomas más</summary>
+<br>
+🇺🇸&nbsp;<a href="README.md">English</a>&nbsp;&nbsp;·&nbsp; 🇫🇷&nbsp;<a href="README.fr.md">Français</a>&nbsp;&nbsp;·&nbsp; 🇩🇪&nbsp;<a href="README.de.md">Deutsch</a>&nbsp;&nbsp;·&nbsp; 🇮🇹&nbsp;<a href="README.it.md">Italiano</a>&nbsp;&nbsp;·&nbsp; 🇧🇷&nbsp;<a href="README.pt-BR.md">Português</a>&nbsp;&nbsp;·&nbsp; 🇳🇱&nbsp;<a href="README.nl.md">Nederlands</a>&nbsp;&nbsp;·&nbsp; 🇵🇱&nbsp;<a href="README.pl.md">Polski</a><br>
+🇷🇺&nbsp;<a href="README.ru.md">Русский</a>&nbsp;&nbsp;·&nbsp; 🇹🇷&nbsp;<a href="README.tr.md">Türkçe</a>&nbsp;&nbsp;·&nbsp; 🇯🇵&nbsp;<a href="README.ja.md">日本語</a>&nbsp;&nbsp;·&nbsp; 🇰🇷&nbsp;<a href="README.ko.md">한국어</a>&nbsp;&nbsp;·&nbsp; 🇨🇳&nbsp;<a href="README.zh-Hans.md">简体中文</a>&nbsp;&nbsp;·&nbsp; 🇹🇼&nbsp;<a href="README.zh-Hant.md">繁體中文</a>
+</details>
+</div>
 
 <p align="center"><img src="docs/screenshots/es/simple.png" width="800" alt="Unmuffle en modo Sencillo"></p>
 

@@ -10,7 +10,6 @@ The picture stays untouched.</p>
   <a href="https://github.com/iAlborz/Unmuffle/releases/latest"><img src="https://img.shields.io/github/v/release/iAlborz/Unmuffle?style=flat-square&label=version&color=38BDF8" alt="Latest version"></a>
   <img src="https://img.shields.io/badge/macOS-14%2B-555?style=flat-square&logo=apple&logoColor=white" alt="macOS 14 or later">
   <img src="https://img.shields.io/badge/languages-14-34D399?style=flat-square" alt="14 languages">
-  <a href="https://github.com/iAlborz/Unmuffle/releases"><img src="https://img.shields.io/github/downloads/iAlborz/Unmuffle/total?style=flat-square&color=555" alt="Downloads"></a>
   <a href="LICENSE"><img src="https://img.shields.io/github/license/iAlborz/Unmuffle?style=flat-square&color=555" alt="MIT license"></a>
 </p>
 
@@ -22,8 +21,6 @@ The picture stays untouched.</p>
 
 <p align="center"><sub>Apple Silicon and Intel · macOS 14 or later · Notarized by Apple</sub></p>
 
-<p align="center"><sub><i>Option 1: dropdown (click it)</i></sub></p>
-
 <div align="center">
 <details>
 <summary>🌐 <b>English</b> · 13 more languages</summary>
@@ -32,13 +29,6 @@ The picture stays untouched.</p>
 🇷🇺&nbsp;<a href="README.ru.md">Русский</a>&nbsp;&nbsp;·&nbsp; 🇹🇷&nbsp;<a href="README.tr.md">Türkçe</a>&nbsp;&nbsp;·&nbsp; 🇯🇵&nbsp;<a href="README.ja.md">日本語</a>&nbsp;&nbsp;·&nbsp; 🇰🇷&nbsp;<a href="README.ko.md">한국어</a>&nbsp;&nbsp;·&nbsp; 🇨🇳&nbsp;<a href="README.zh-Hans.md">简体中文</a>&nbsp;&nbsp;·&nbsp; 🇹🇼&nbsp;<a href="README.zh-Hant.md">繁體中文</a>
 </details>
 </div>
-
-<p align="center"><sub><i>Option 2: flags, always visible</i></sub></p>
-
-<p align="center">
-🇺🇸&nbsp;<b>English</b>&nbsp;&nbsp;·&nbsp; 🇪🇸&nbsp;<a href="README.es.md">Español</a>&nbsp;&nbsp;·&nbsp; 🇫🇷&nbsp;<a href="README.fr.md">Français</a>&nbsp;&nbsp;·&nbsp; 🇩🇪&nbsp;<a href="README.de.md">Deutsch</a>&nbsp;&nbsp;·&nbsp; 🇮🇹&nbsp;<a href="README.it.md">Italiano</a>&nbsp;&nbsp;·&nbsp; 🇧🇷&nbsp;<a href="README.pt-BR.md">Português</a>&nbsp;&nbsp;·&nbsp; 🇳🇱&nbsp;<a href="README.nl.md">Nederlands</a><br>
-🇵🇱&nbsp;<a href="README.pl.md">Polski</a>&nbsp;&nbsp;·&nbsp; 🇷🇺&nbsp;<a href="README.ru.md">Русский</a>&nbsp;&nbsp;·&nbsp; 🇹🇷&nbsp;<a href="README.tr.md">Türkçe</a>&nbsp;&nbsp;·&nbsp; 🇯🇵&nbsp;<a href="README.ja.md">日本語</a>&nbsp;&nbsp;·&nbsp; 🇰🇷&nbsp;<a href="README.ko.md">한국어</a>&nbsp;&nbsp;·&nbsp; 🇨🇳&nbsp;<a href="README.zh-Hans.md">简体中文</a>&nbsp;&nbsp;·&nbsp; 🇹🇼&nbsp;<a href="README.zh-Hant.md">繁體中文</a>
-</p>
 
 <p align="center"><img src="docs/screenshots/en/simple.png" width="800" alt="Unmuffle in Simple mode"></p>
 
