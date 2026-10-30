@@ -28,16 +28,16 @@ The picture stays untouched.</p>
 <details>
 <summary>🌐 <b>English</b> · 13 more languages</summary>
 <br>
-🇪🇸 <a href="README.es.md">Español</a> &nbsp;·&nbsp; 🇫🇷 <a href="README.fr.md">Français</a> &nbsp;·&nbsp; 🇩🇪 <a href="README.de.md">Deutsch</a> &nbsp;·&nbsp; 🇮🇹 <a href="README.it.md">Italiano</a> &nbsp;·&nbsp; 🇧🇷 <a href="README.pt-BR.md">Português</a> &nbsp;·&nbsp; 🇳🇱 <a href="README.nl.md">Nederlands</a> &nbsp;·&nbsp; 🇵🇱 <a href="README.pl.md">Polski</a><br>
-🇷🇺 <a href="README.ru.md">Русский</a> &nbsp;·&nbsp; 🇹🇷 <a href="README.tr.md">Türkçe</a> &nbsp;·&nbsp; 🇯🇵 <a href="README.ja.md">日本語</a> &nbsp;·&nbsp; 🇰🇷 <a href="README.ko.md">한국어</a> &nbsp;·&nbsp; 🇨🇳 <a href="README.zh-Hans.md">简体中文</a> &nbsp;·&nbsp; 🇹🇼 <a href="README.zh-Hant.md">繁體中文</a>
+🇪🇸&nbsp;<a href="README.es.md">Español</a>&nbsp;&nbsp;·&nbsp; 🇫🇷&nbsp;<a href="README.fr.md">Français</a>&nbsp;&nbsp;·&nbsp; 🇩🇪&nbsp;<a href="README.de.md">Deutsch</a>&nbsp;&nbsp;·&nbsp; 🇮🇹&nbsp;<a href="README.it.md">Italiano</a>&nbsp;&nbsp;·&nbsp; 🇧🇷&nbsp;<a href="README.pt-BR.md">Português</a>&nbsp;&nbsp;·&nbsp; 🇳🇱&nbsp;<a href="README.nl.md">Nederlands</a>&nbsp;&nbsp;·&nbsp; 🇵🇱&nbsp;<a href="README.pl.md">Polski</a><br>
+🇷🇺&nbsp;<a href="README.ru.md">Русский</a>&nbsp;&nbsp;·&nbsp; 🇹🇷&nbsp;<a href="README.tr.md">Türkçe</a>&nbsp;&nbsp;·&nbsp; 🇯🇵&nbsp;<a href="README.ja.md">日本語</a>&nbsp;&nbsp;·&nbsp; 🇰🇷&nbsp;<a href="README.ko.md">한국어</a>&nbsp;&nbsp;·&nbsp; 🇨🇳&nbsp;<a href="README.zh-Hans.md">简体中文</a>&nbsp;&nbsp;·&nbsp; 🇹🇼&nbsp;<a href="README.zh-Hant.md">繁體中文</a>
 </details>
 </div>
 
 <p align="center"><sub><i>Option 2: flags, always visible</i></sub></p>
 
 <p align="center">
-🇺🇸 <b>English</b> &nbsp;·&nbsp; 🇪🇸 <a href="README.es.md">Español</a> &nbsp;·&nbsp; 🇫🇷 <a href="README.fr.md">Français</a> &nbsp;·&nbsp; 🇩🇪 <a href="README.de.md">Deutsch</a> &nbsp;·&nbsp; 🇮🇹 <a href="README.it.md">Italiano</a> &nbsp;·&nbsp; 🇧🇷 <a href="README.pt-BR.md">Português</a> &nbsp;·&nbsp; 🇳🇱 <a href="README.nl.md">Nederlands</a><br>
-🇵🇱 <a href="README.pl.md">Polski</a> &nbsp;·&nbsp; 🇷🇺 <a href="README.ru.md">Русский</a> &nbsp;·&nbsp; 🇹🇷 <a href="README.tr.md">Türkçe</a> &nbsp;·&nbsp; 🇯🇵 <a href="README.ja.md">日本語</a> &nbsp;·&nbsp; 🇰🇷 <a href="README.ko.md">한국어</a> &nbsp;·&nbsp; 🇨🇳 <a href="README.zh-Hans.md">简体中文</a> &nbsp;·&nbsp; 🇹🇼 <a href="README.zh-Hant.md">繁體中文</a>
+🇺🇸&nbsp;<b>English</b>&nbsp;&nbsp;·&nbsp; 🇪🇸&nbsp;<a href="README.es.md">Español</a>&nbsp;&nbsp;·&nbsp; 🇫🇷&nbsp;<a href="README.fr.md">Français</a>&nbsp;&nbsp;·&nbsp; 🇩🇪&nbsp;<a href="README.de.md">Deutsch</a>&nbsp;&nbsp;·&nbsp; 🇮🇹&nbsp;<a href="README.it.md">Italiano</a>&nbsp;&nbsp;·&nbsp; 🇧🇷&nbsp;<a href="README.pt-BR.md">Português</a>&nbsp;&nbsp;·&nbsp; 🇳🇱&nbsp;<a href="README.nl.md">Nederlands</a><br>
+🇵🇱&nbsp;<a href="README.pl.md">Polski</a>&nbsp;&nbsp;·&nbsp; 🇷🇺&nbsp;<a href="README.ru.md">Русский</a>&nbsp;&nbsp;·&nbsp; 🇹🇷&nbsp;<a href="README.tr.md">Türkçe</a>&nbsp;&nbsp;·&nbsp; 🇯🇵&nbsp;<a href="README.ja.md">日本語</a>&nbsp;&nbsp;·&nbsp; 🇰🇷&nbsp;<a href="README.ko.md">한국어</a>&nbsp;&nbsp;·&nbsp; 🇨🇳&nbsp;<a href="README.zh-Hans.md">简体中文</a>&nbsp;&nbsp;·&nbsp; 🇹🇼&nbsp;<a href="README.zh-Hant.md">繁體中文</a>
 </p>
 
 <p align="center"><img src="docs/screenshots/en/simple.png" width="800" alt="Unmuffle in Simple mode"></p>
