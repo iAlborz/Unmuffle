@@ -20,8 +20,25 @@ The picture stays untouched.</p>
   <a href="https://apps.apple.com/app/unmuffle/id6825195286"><img src="https://toolbox.marketingtools.apple.com/api/badges/download-on-the-mac-app-store/black/en-us?size=250x83" height="48" alt="Download on the Mac App Store"></a>
 </p>
 
-<p align="center"><sub>Apple Silicon and Intel · macOS 14 or later · Notarized by Apple<br>
-<b>English</b> · <a href="README.es.md">Español</a> · <a href="README.fr.md">Français</a> · <a href="README.de.md">Deutsch</a> · <a href="README.it.md">Italiano</a> · <a href="README.pt-BR.md">Português</a> · <a href="README.nl.md">Nederlands</a> · <a href="README.pl.md">Polski</a> · <a href="README.ru.md">Русский</a> · <a href="README.tr.md">Türkçe</a> · <a href="README.ja.md">日本語</a> · <a href="README.ko.md">한국어</a> · <a href="README.zh-Hans.md">简体中文</a> · <a href="README.zh-Hant.md">繁體中文</a></sub></p>
+<p align="center"><sub>Apple Silicon and Intel · macOS 14 or later · Notarized by Apple</sub></p>
+
+<p align="center"><sub><i>Option 1: dropdown (click it)</i></sub></p>
+
+<div align="center">
+<details>
+<summary>🌐 <b>English</b> · 13 more languages</summary>
+<br>
+🇪🇸 <a href="README.es.md">Español</a> &nbsp;·&nbsp; 🇫🇷 <a href="README.fr.md">Français</a> &nbsp;·&nbsp; 🇩🇪 <a href="README.de.md">Deutsch</a> &nbsp;·&nbsp; 🇮🇹 <a href="README.it.md">Italiano</a> &nbsp;·&nbsp; 🇧🇷 <a href="README.pt-BR.md">Português</a> &nbsp;·&nbsp; 🇳🇱 <a href="README.nl.md">Nederlands</a> &nbsp;·&nbsp; 🇵🇱 <a href="README.pl.md">Polski</a><br>
+🇷🇺 <a href="README.ru.md">Русский</a> &nbsp;·&nbsp; 🇹🇷 <a href="README.tr.md">Türkçe</a> &nbsp;·&nbsp; 🇯🇵 <a href="README.ja.md">日本語</a> &nbsp;·&nbsp; 🇰🇷 <a href="README.ko.md">한국어</a> &nbsp;·&nbsp; 🇨🇳 <a href="README.zh-Hans.md">简体中文</a> &nbsp;·&nbsp; 🇹🇼 <a href="README.zh-Hant.md">繁體中文</a>
+</details>
+</div>
+
+<p align="center"><sub><i>Option 2: flags, always visible</i></sub></p>
+
+<p align="center">
+🇺🇸 <b>English</b> &nbsp;·&nbsp; 🇪🇸 <a href="README.es.md">Español</a> &nbsp;·&nbsp; 🇫🇷 <a href="README.fr.md">Français</a> &nbsp;·&nbsp; 🇩🇪 <a href="README.de.md">Deutsch</a> &nbsp;·&nbsp; 🇮🇹 <a href="README.it.md">Italiano</a> &nbsp;·&nbsp; 🇧🇷 <a href="README.pt-BR.md">Português</a> &nbsp;·&nbsp; 🇳🇱 <a href="README.nl.md">Nederlands</a><br>
+🇵🇱 <a href="README.pl.md">Polski</a> &nbsp;·&nbsp; 🇷🇺 <a href="README.ru.md">Русский</a> &nbsp;·&nbsp; 🇹🇷 <a href="README.tr.md">Türkçe</a> &nbsp;·&nbsp; 🇯🇵 <a href="README.ja.md">日本語</a> &nbsp;·&nbsp; 🇰🇷 <a href="README.ko.md">한국어</a> &nbsp;·&nbsp; 🇨🇳 <a href="README.zh-Hans.md">简体中文</a> &nbsp;·&nbsp; 🇹🇼 <a href="README.zh-Hant.md">繁體中文</a>
+</p>
 
 <p align="center"><img src="docs/screenshots/en/simple.png" width="800" alt="Unmuffle in Simple mode"></p>
 
