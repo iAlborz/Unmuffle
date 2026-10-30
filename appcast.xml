@@ -7,6 +7,16 @@
     <description>Updates for the GitHub version of Unmuffle.</description>
     <language>en</language>
     <item>
+      <title>Unmuffle 1.4.2</title>
+      <pubDate>Fri, 30 Oct 2026 06:20:12 +0000</pubDate>
+      <sparkle:version>8</sparkle:version>
+      <sparkle:shortVersionString>1.4.2</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <sparkle:fullReleaseNotesLink>https://github.com/iAlborz/Unmuffle/releases</sparkle:fullReleaseNotesLink>
+      <description><![CDATA[<ul><li>Unmuffle is now notarized by Apple, so macOS opens it right away. No more "Apple could not verify" warning.</li></ul>]]></description>
+      <enclosure url="https://github.com/iAlborz/Unmuffle/releases/download/v1.4.2/Unmuffle.zip" type="application/octet-stream" sparkle:edSignature="8h80Ft3k1V+r+RI3QCrm7C1n1/air6NlTnVP4pb5O5zy8tbOwhUvNFvhPR6ORz0H4Goj/CcGZwWu3EVNNE+fAw==" length="23109147"/>
+    </item>
+    <item>
       <title>Unmuffle 1.4.1</title>
       <pubDate>Wed, 28 Oct 2026 21:11:54 +0000</pubDate>
       <sparkle:version>7</sparkle:version>

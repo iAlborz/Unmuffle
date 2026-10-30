@@ -37,6 +37,17 @@ xcrun xcstringstool compile Resources/Localizable.xcstrings --output-directory "
 # sharingd/AirDrop quarantine + ad-hoc sign makes Gatekeeper say the app is
 # damaged and offer to move it to Trash. Strip that before signing.
 xattr -cr "$APP" 2>/dev/null || true
-scripts/embed-ffmpeg.sh "$APP" - --no-sandbox
-codesign --force --sign - "$APP"
+# Releases are signed with the Developer ID certificate so Apple can notarize them (scripts/release.sh sets
+# SIGN_ID="Developer ID Application"); other builds are signed ad hoc.
+ID="${SIGN_ID:--}"
+OPTS=()
+[[ "$ID" == "Developer ID"* ]] && OPTS=(--options runtime --timestamp)
+scripts/embed-ffmpeg.sh "$APP" "$ID" --no-sandbox
+# Sparkle comes signed ad hoc. Re-sign it inside out with the app's identity, as Sparkle's docs describe.
+FW="$APP/Contents/Frameworks/Sparkle.framework"
+codesign --force --sign "$ID" $OPTS "$FW/Versions/B/XPCServices/Installer.xpc"
+codesign --force --sign "$ID" $OPTS --preserve-metadata=entitlements "$FW/Versions/B/XPCServices/Downloader.xpc"
+codesign --force --sign "$ID" $OPTS "$FW/Versions/B/Autoupdate" "$FW/Versions/B/Updater.app"
+codesign --force --sign "$ID" $OPTS "$FW"
+codesign --force --sign "$ID" $OPTS "$APP"
 echo "Built $PWD/$APP"

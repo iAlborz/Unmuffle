@@ -20,7 +20,7 @@ The picture stays untouched.</p>
   <a href="https://apps.apple.com/app/unmuffle/id6825195286"><img src="https://toolbox.marketingtools.apple.com/api/badges/download-on-the-mac-app-store/black/en-us?size=250x83" height="48" alt="Download on the Mac App Store"></a>
 </p>
 
-<p align="center"><sub>Apple Silicon and Intel · macOS 14 or later<br>
+<p align="center"><sub>Apple Silicon and Intel · macOS 14 or later · Notarized by Apple<br>
 English · Español · Français · Deutsch · Italiano · Português · Nederlands · Polski · Русский · Türkçe · 日本語 · 한국어 · 简体中文 · 繁體中文</sub></p>
 
 <p align="center"><img src="docs/screenshots/en/simple.png" width="800" alt="Unmuffle in Simple mode"></p>
@@ -81,20 +81,7 @@ The App Store keeps it up to date.
 
 1. Download [`Unmuffle.zip`](https://github.com/iAlborz/Unmuffle/releases/latest/download/Unmuffle.zip)
    and drag `Unmuffle.app` to your Applications folder. Everything it needs is built in.
-2. Open the app. Unmuffle is not notarized by Apple, so the first time macOS blocks it. Click
-   **Done**, then open **System Settings → Privacy & Security**, scroll down, and click
-   **Open Anyway** next to Unmuffle.
-
-<details>
-<summary>macOS says the app is damaged?</summary>
-
-Remove the download flag in Terminal and open it again:
-
-```bash
-xattr -dr com.apple.quarantine /Applications/Unmuffle.app
-```
-
-</details>
+2. Open the app. It's notarized by Apple, so macOS opens it without a warning.
 
 From version 1.3 on, the GitHub version updates itself. When a new version is out, a banner appears at
 the top of the window. Click **Update** and Unmuffle downloads it, installs it and relaunches. You can

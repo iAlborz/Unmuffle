@@ -15,6 +15,8 @@ cp "$ROOT/vendor/ffmpeg/bin/ffmpeg" "$ROOT/vendor/ffmpeg/bin/ffprobe" "$APP/Cont
 cp "$ROOT"/vendor/ffmpeg/lib/*.dylib "$APP/Contents/Frameworks/"
 cp "$ROOT/vendor/ffmpeg/LICENSE.txt" "$APP/Contents/Resources/FFmpeg-LICENSE.txt"
 cp "$ROOT/vendor/ffmpeg/SOURCE.txt" "$APP/Contents/Resources/FFmpeg-SOURCE.txt"
-# Sign inside out.
-codesign --force --sign "$ID" "$APP"/Contents/Frameworks/*.dylib
-codesign --force --sign "$ID" $HELPER_ENTITLEMENTS "$APP/Contents/MacOS/ffmpeg" "$APP/Contents/MacOS/ffprobe"
+# Sign inside out. A Developer ID build gets notarized, which needs the hardened runtime and a secure timestamp.
+OPTS=()
+[[ "$ID" == "Developer ID"* ]] && OPTS=(--options runtime --timestamp)
+codesign --force --sign "$ID" $OPTS "$APP"/Contents/Frameworks/*.dylib
+codesign --force --sign "$ID" $OPTS $HELPER_ENTITLEMENTS "$APP/Contents/MacOS/ffmpeg" "$APP/Contents/MacOS/ffprobe"
